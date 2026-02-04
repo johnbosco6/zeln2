@@ -10,11 +10,13 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen relative overflow-hidden">
-        {/* Authentic gradient background with brand colors */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#f0f9f4] via-[#ffffff] to-[#f5fef0]" />
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[rgba(196,214,0,0.15)] via-transparent to-transparent" />
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[rgba(0,138,75,0.12)] via-transparent to-transparent" />
+        {/* Enhanced multi-layered mesh background */}
+        <div className="absolute inset-0 -z-10 bg-[#ffffff]">
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#f0fdf4] via-transparent to-[#fdfcf2] opacity-80" />
+          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle_at_center,_rgba(196,214,0,0.18)_0%,_transparent_70%)] animate-pulse" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle_at_center,_rgba(0,138,75,0.12)_0%,_transparent_70%)]" />
+          <div className="absolute top-[20%] right-[10%] w-[40%] h-[40%] bg-[radial-gradient(circle_at_center,_rgba(196,214,0,0.08)_0%,_transparent_70%)]" />
+          <div className="absolute bottom-[20%] left-[10%] w-[40%] h-[40%] bg-[radial-gradient(circle_at_center,_rgba(0,138,75,0.06)_0%,_transparent_70%)]" />
         </div>
 
         <Navbar />
