@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import OpeningHours from "./components/OpeningHours";
 import RealTimeWidget from "./components/RealTimeWidget";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -28,6 +29,11 @@ export default function Home() {
           <p className={styles.heroSubtitle}>
             Pyszne i zdrowe jedzenie!
           </p>
+          <div className={styles.heroAction}>
+            <Link href="/menu/dania-glowne" className={styles.animatedButton}>
+              <span>Lunch Menu</span>
+            </Link>
+          </div>
         </section>
 
         {/* Content Sections */}

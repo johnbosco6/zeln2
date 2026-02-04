@@ -36,7 +36,76 @@
   max-width: 600px;
   line-height: 1.6;
   opacity: 0.9;
+  margin-bottom: 2.5rem;
 }
+
+.heroAction {
+  margin-top: 1rem;
+}
+
+.animatedButton {
+  position: relative;
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 9999px;
+  background: transparent;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.animatedButton:hover {
+  transform: scale(1.05);
+}
+
+.animatedButton::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg,
+      var(--primary-green) 0%,
+      var(--accent-lime) 25%,
+      #00b361 50%,
+      var(--accent-lime) 75%,
+      var(--primary-green) 100%);
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: rotate 4s linear infinite;
+  z-index: -2;
+}
+
+.animatedButton span {
+  display: inline-block;
+  padding: 0.85rem 2.5rem;
+  background: white;
+  color: var(--primary-green);
+  border-radius: 9999px;
+  font-family: var(--font-inter);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.animatedButton:hover span {
+  background: rgba(255, 255, 255, 0.9);
+  color: #006e3c;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 
 .contentSection {
   max-width: 1200px;
