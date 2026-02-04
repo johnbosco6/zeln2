@@ -26,7 +26,7 @@ export default function Home() {
         <section className={styles.hero}>
           <h1 className={styles.heroTitle}>Zielony Talerzyk</h1>
           <p className={styles.heroSubtitle}>
-            Smak natury na Twoim talerzu
+            Pyszne i zdrowe jedzenie!
           </p>
         </section>
 
