@@ -30,7 +30,7 @@ export default function Home() {
             Pyszne i zdrowe jedzenie!
           </p>
           <div className={styles.heroAction}>
-            <Link href="/menu/dania-glowne" className={styles.animatedButton}>
+            <Link href="/lunch-menu" className={styles.animatedButton}>
               <span>Lunch Menu</span>
             </Link>
           </div>

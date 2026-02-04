@@ -1,0 +1,231 @@
+.container {
+    min-height: 100vh;
+    padding: 8rem 2rem 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: var(--font-playfair);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    text-align: center;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-family: var(--font-inter);
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text-dark);
+    opacity: 0.8;
+    margin-bottom: 4rem;
+}
+
+.menuGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.menuCard {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(0, 138, 75, 0.2);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 138, 75, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.menuCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 138, 75, 0.15);
+    border-color: var(--primary-green);
+}
+
+.currentBadge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--primary-green);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 12px rgba(0, 138, 75, 0.2);
+}
+
+.date {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.menuTitle {
+    font-family: var(--font-playfair);
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-lime);
+}
+
+.section {
+    margin-bottom: 1.5rem;
+}
+
+.sectionLabel {
+    display: block;
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+
+.choice {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+.mainCourseList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.courseItem {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.courseNumber {
+    background: var(--accent-lime);
+    color: var(--primary-green);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+
+.courseDetails {
+    flex: 1;
+}
+
+.courseTags {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.meat {
+    background: rgba(211, 47, 47, 0.1);
+    color: #d32f2f;
+}
+
+.veg {
+    background: rgba(0, 138, 75, 0.1);
+    color: #008a4b;
+}
+
+.vegan {
+    background: rgba(196, 214, 0, 0.2);
+    color: #828a00;
+}
+
+.priceBox {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-family: var(--font-playfair);
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+.contactBox {
+    margin-top: 2rem;
+    background: rgba(196, 214, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.phoneLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-green);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.orderBtn {
+    background: var(--primary-green);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.orderBtn:hover {
+    background: var(--accent-lime);
+    color: var(--primary-green);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .menuCard {
+        padding: 1.5rem;
+    }
+
+    .contactBox {
+        flex-direction: column;
+        text-align: center;
+    }
+}
