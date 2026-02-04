@@ -4,6 +4,13 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 import styles from "../page.module.css";
 import menuStyles from "./catering.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Catering",
+    description: "Profesjonalny catering w Lublinie. Zdrowe, smaczne i pięknie podane dania na Twoje wydarzenie. Sprawdź naszą ofertę dla firm i osób prywatnych.",
+    keywords: ["catering Lublin", "catering okolicznościowy", "zdrowy catering", "jedzenie na dowóz Lublin", "catering wigilijny Lublin"],
+};
 
 export default function Catering() {
     return (

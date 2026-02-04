@@ -1,8 +1,15 @@
 import Navbar from "../components/Navbar";
 import SecondaryNav from "../components/SecondaryNav";
 import Footer from "../components/Footer";
+import styles from "./dostawa.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Dostawa i Kontakt",
+    description: "Zamów zdrowe jedzenie prosto pod Twoje drzwi. Szybka dostawa w Lublinie i łatwy kontakt z naszą restauracją.",
+    keywords: ["jedzenie na telefon Lublin", "dostawa jedzenia Lublin", "zdrowe jedzenie na wynos", "kontakt Zielony Talerzyk"],
+};
 import Image from "next/image";
-import styles from "../page.module.css";
 
 export default function Dostawa() {
     return (

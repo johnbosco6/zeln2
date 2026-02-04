@@ -6,6 +6,13 @@ import SecondaryNav from "../components/SecondaryNav";
 import Footer from "../components/Footer";
 import { Phone, ExternalLink, Calendar, Soup, UtensilsCrossed } from "lucide-react";
 import styles from "./lunch-menu.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Lunch Menu",
+    description: "Sprawdź nasze aktualne menu lunchowe. Co tydzień nowe, świeże i zdrowe propozycje w Zielonym Talerzyku w Lublinie.",
+    keywords: ["lunch menu Lublin", "obiad dnia Lublin", "menu tygodniowe", "tani lunch Lublin", "zdrowy lunch"],
+};
 
 const lunchMenus = [
     {

@@ -6,6 +6,13 @@ import SecondaryNav from "../components/SecondaryNav";
 import Footer from "../components/Footer";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import styles from "./faq.module.css";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Często Zadawane Pytania (FAQ)",
+    description: "Dowiedz się więcej o Zielonym Talerzyku. Odpowiedzi na pytania o rezerwacje, parking, opcje wegańskie i przyjazność dla zwierząt.",
+    keywords: ["faq Zielony Talerzyk", "rezerwacje restauracja Lublin", "restauracja przyjazna psom Lublin", "parking Zielony Talerzyk"],
+};
 
 const faqs = [
     {
