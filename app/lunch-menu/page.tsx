@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import SecondaryNav from "../components/SecondaryNav";
 import Footer from "../components/Footer";
@@ -64,6 +67,13 @@ const lunchMenus = [
 ];
 
 export default function LunchMenuPage() {
+    const [filter, setFilter] = useState<'all' | 'mięsne' | 'wegetariańskie' | 'wegańskie'>('all');
+
+    const filterMains = (mains: any[]) => {
+        if (filter === 'all') return mains;
+        return mains.filter(main => main.type === filter);
+    };
+
     return (
         <>
             <main className="min-h-screen relative overflow-hidden">
@@ -81,66 +91,99 @@ export default function LunchMenuPage() {
                         <p className={styles.subtitle}>Poznaj nasze cotygodniowe propozycje lunchowe</p>
                     </header>
 
+                    {/* Filter Buttons */}
+                    <div className={styles.filterContainer}>
+                        <button
+                            className={`${styles.filterBtn} ${filter === 'all' ? styles.active : ''}`}
+                            onClick={() => setFilter('all')}
+                        >
+                            Wszystko
+                        </button>
+                        <button
+                            className={`${styles.filterBtn} ${filter === 'mięsne' ? styles.active : ''}`}
+                            onClick={() => setFilter('mięsne')}
+                        >
+                            Mięsne
+                        </button>
+                        <button
+                            className={`${styles.filterBtn} ${filter === 'wegetariańskie' ? styles.active : ''}`}
+                            onClick={() => setFilter('wegetariańskie')}
+                        >
+                            Wegetariańskie
+                        </button>
+                        <button
+                            className={`${styles.filterBtn} ${filter === 'wegańskie' ? styles.active : ''}`}
+                            onClick={() => setFilter('wegańskie')}
+                        >
+                            Wegańskie
+                        </button>
+                    </div>
+
                     <div className={styles.menuGrid}>
-                        {lunchMenus.map((menu, index) => (
-                            <div key={index} className={styles.menuCard}>
-                                {menu.isCurrent && <div className={styles.currentBadge}>Aktualne</div>}
+                        {lunchMenus.map((menu, index) => {
+                            const filteredMains = filterMains(menu.mains);
+                            if (filteredMains.length === 0) return null;
 
-                                <span className={styles.date}>
-                                    <Calendar size={18} style={{ verticalAlign: 'middle', marginRight: '8px' }} />
-                                    {menu.date}
-                                </span>
+                            return (
+                                <div key={index} className={styles.menuCard}>
+                                    {menu.isCurrent && <div className={styles.currentBadge}>Aktualne</div>}
 
-                                <h2 className={styles.menuTitle}>{menu.title}</h2>
-
-                                <div className={styles.section}>
-                                    <span className={styles.sectionLabel}>
-                                        <Soup size={16} style={{ marginRight: '6px' }} />
-                                        Zupa:
+                                    <span className={styles.date}>
+                                        <Calendar size={18} style={{ verticalAlign: 'middle', marginRight: '8px' }} />
+                                        {menu.date}
                                     </span>
-                                    <p className={styles.choice}>{menu.soup}</p>
-                                </div>
 
-                                <div className={styles.section}>
-                                    <span className={styles.sectionLabel}>
-                                        <UtensilsCrossed size={16} style={{ marginRight: '6px' }} />
-                                        Danie główne:
-                                    </span>
-                                    <div className={styles.mainCourseList}>
-                                        {menu.mains.map((main, mIndex) => (
-                                            <div key={mIndex} className={styles.courseItem}>
-                                                <div className={styles.courseNumber}>{mIndex + 1}</div>
-                                                <div className={styles.courseDetails}>
-                                                    <p>{main.text}</p>
-                                                    <div className={styles.courseTags}>
-                                                        <span className={`${styles.tag} ${main.type === 'mięsne' ? styles.meat :
+                                    <h2 className={styles.menuTitle}>{menu.title}</h2>
+
+                                    <div className={styles.section}>
+                                        <span className={styles.sectionLabel}>
+                                            <Soup size={16} style={{ marginRight: '6px' }} />
+                                            Zupa:
+                                        </span>
+                                        <p className={styles.choice}>{menu.soup}</p>
+                                    </div>
+
+                                    <div className={styles.section}>
+                                        <span className={styles.sectionLabel}>
+                                            <UtensilsCrossed size={16} style={{ marginRight: '6px' }} />
+                                            Danie główne:
+                                        </span>
+                                        <div className={styles.mainCourseList}>
+                                            {filteredMains.map((main, mIndex) => (
+                                                <div key={mIndex} className={styles.courseItem}>
+                                                    <div className={styles.courseNumber}>{mIndex + 1}</div>
+                                                    <div className={styles.courseDetails}>
+                                                        <p>{main.text}</p>
+                                                        <div className={styles.courseTags}>
+                                                            <span className={`${styles.tag} ${main.type === 'mięsne' ? styles.meat :
                                                                 main.type === 'wegetariańskie' ? styles.veg : styles.vegan
-                                                            }`}>
-                                                            {main.type}
-                                                        </span>
+                                                                }`}>
+                                                                {main.type}
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div className={styles.priceBox}>
+                                        <span className={styles.sectionLabel}>Zestaw Lunch (zupa + drugie danie)</span>
+                                        <span className={styles.price}>{menu.price}</span>
+                                    </div>
+
+                                    <div className={styles.contactBox}>
+                                        <a href="tel:+48500068241" className={styles.phoneLink}>
+                                            <Phone size={20} />
+                                            <span>500 068 241</span>
+                                        </a>
+                                        <a href="#" className={styles.orderBtn}>
+                                            Zamów online <ExternalLink size={16} style={{ marginLeft: '8px' }} />
+                                        </a>
                                     </div>
                                 </div>
-
-                                <div className={styles.priceBox}>
-                                    <span className={styles.sectionLabel}>Zestaw Lunch (zupa + drugie danie)</span>
-                                    <span className={styles.price}>{menu.price}</span>
-                                </div>
-
-                                <div className={styles.contactBox}>
-                                    <a href="tel:+48500068241" className={styles.phoneLink}>
-                                        <Phone size={20} />
-                                        <span>500 068 241</span>
-                                    </a>
-                                    <a href="#" className={styles.orderBtn}>
-                                        Zamów online <ExternalLink size={16} style={{ marginLeft: '8px' }} />
-                                    </a>
-                                </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </main>
