@@ -1,12 +1,20 @@
 :root {
+  --primary-green: #008A4B;
+  --accent-lime: #C4D600;
+  --text-dark: #1A1A1A;
+  --text-light: #F9F9F9;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1A1A1A;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --glass-bg: rgba(10, 10, 10, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -18,10 +26,40 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg,
+      #f0f9f4 0%,
+      #ffffff 25%,
+      #f5fef0 50%,
+      #ffffff 75%,
+      #efffef 100%);
+  background-attachment: fixed;
+  font-family: var(--font-inter), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Additional gradient overlay for depth */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at top left, rgba(196, 214, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(0, 138, 75, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
 }
 
 * {
@@ -33,10 +71,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

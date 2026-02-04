@@ -1,0 +1,212 @@
+.menuPage {
+    min-height: 100vh;
+    padding-top: 12rem;
+}
+
+.menuHeader {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.menuTitle {
+    font-family: var(--font-playfair);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.menuSubtitle {
+    font-family: var(--font-inter);
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+.menuContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.menuSection {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid var(--primary-green);
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    font-family: var(--font-playfair);
+    font-size: 1.6rem;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-lime);
+    padding-bottom: 0.5rem;
+}
+
+.menuItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menuItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.25rem;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.menuItem:hover {
+    background: rgba(0, 138, 75, 0.05);
+    border-color: var(--accent-lime);
+}
+
+.itemContent {
+    flex: 1;
+    padding-right: 1.5rem;
+}
+
+.itemName {
+    font-family: var(--font-inter);
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.itemCategory {
+    font-family: var(--font-inter);
+    font-size: 0.85rem;
+    color: var(--primary-green);
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.itemPrice {
+    font-family: var(--font-inter);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    white-space: nowrap;
+    padding-top: 0.25rem;
+}
+
+.itemNote {
+    font-size: 0.8rem;
+    color: var(--accent-lime);
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .menuPage {
+        padding-top: 10rem;
+    }
+
+    .menuItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .itemContent {
+        padding-right: 0;
+        margin-bottom: 0.75rem;
+    }
+
+    .itemPrice {
+        padding-top: 0;
+    }
+
+    .menuContainer {
+        padding: 0 1rem 3rem;
+    }
+
+    .menuSection {
+        padding: 2rem 1.5rem;
+    }
+
+    .menuTitle {
+        font-size: clamp(2rem, 6vw, 2.5rem);
+    }
+
+    .sectionTitle {
+        font-size: 1.4rem;
+    }
+
+    .itemName {
+        font-size: 0.95rem;
+    }
+
+    .itemPrice {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menuPage {
+        padding-top: 8rem;
+    }
+
+    .menuHeader {
+        margin-bottom: 2rem;
+    }
+
+    .menuTitle {
+        font-size: clamp(1.8rem, 5vw, 2rem);
+        margin-bottom: 0.75rem;
+    }
+
+    .menuSubtitle {
+        font-size: 1rem;
+    }
+
+    .menuContainer {
+        padding: 0 0.75rem 2rem;
+    }
+
+    .menuSection {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .menuItems {
+        gap: 1rem;
+    }
+
+    .menuItem {
+        padding: 1rem;
+    }
+
+    .itemName {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .itemCategory {
+        font-size: 0.8rem;
+    }
+
+    .itemPrice {
+        font-size: 1.1rem;
+    }
+
+    .itemNote {
+        font-size: 0.75rem;
+    }
+}

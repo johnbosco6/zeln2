@@ -1,0 +1,259 @@
+.menuSection {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.menuTitle {
+    font-family: var(--font-playfair);
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.categoryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.categoryCard {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid var(--accent-lime);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoryCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(196, 214, 0, 0.2);
+}
+
+.categoryTitle {
+    font-family: var(--font-playfair);
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.categoryDescription {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    opacity: 0.85;
+}
+
+.menuCategory {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid var(--primary-green);
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.menuCategoryTitle {
+    font-family: var(--font-playfair);
+    font-size: 1.8rem;
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-lime);
+    padding-bottom: 0.75rem;
+}
+
+.menuItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.menuItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: background 0.2s ease;
+}
+
+.menuItem:hover {
+    background: rgba(0, 138, 75, 0.05);
+}
+
+.itemName {
+    font-family: var(--font-inter);
+    font-size: 1rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.itemPrice {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    white-space: nowrap;
+}
+
+.itemNote {
+    font-size: 0.85rem;
+    color: var(--accent-lime);
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+.importantNotes {
+    background: rgba(196, 214, 0, 0.1);
+    border: 1.5px solid var(--accent-lime);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.importantNotes h3 {
+    font-family: var(--font-playfair);
+    font-size: 1.4rem;
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.importantNotes p {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .categoryGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .menuSection {
+        padding: 0 1rem;
+    }
+
+    .menuTitle {
+        font-size: clamp(2rem, 6vw, 2.5rem);
+        margin-bottom: 2rem;
+    }
+
+    .menuCategory {
+        padding: 2rem 1.5rem;
+    }
+
+    .menuCategoryTitle {
+        font-size: 1.5rem;
+    }
+
+    .menuItem {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 0.75rem;
+    }
+
+    .itemName {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .itemPrice {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .importantNotes {
+        padding: 1.5rem;
+    }
+
+    .importantNotes h3 {
+        font-size: 1.2rem;
+    }
+
+    .importantNotes p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .categoryGrid {
+        gap: 1rem;
+    }
+
+    .categoryCard {
+        padding: 1.5rem;
+    }
+
+    .categoryTitle {
+        font-size: 1.1rem;
+    }
+
+    .categoryDescription {
+        font-size: 0.9rem;
+    }
+
+    .menuSection {
+        padding: 0 0.75rem;
+    }
+
+    .menuTitle {
+        font-size: clamp(1.8rem, 5vw, 2rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .menuCategory {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+    }
+
+    .menuCategoryTitle {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .menuItems {
+        gap: 1rem;
+    }
+
+    .menuItem {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .itemName {
+        font-size: 0.9rem;
+    }
+
+    .itemPrice {
+        font-size: 1.1rem;
+    }
+
+    .importantNotes {
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+
+    .importantNotes h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .importantNotes p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+}

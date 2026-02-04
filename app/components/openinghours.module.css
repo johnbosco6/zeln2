@@ -1,0 +1,167 @@
+.hoursContainer {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.hoursCard {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid var(--primary-green);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 138, 75, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hoursCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 138, 75, 0.18);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.clockIcon {
+    width: 28px;
+    height: 28px;
+    color: var(--primary-green);
+}
+
+.title {
+    font-family: var(--font-playfair);
+    font-size: 1.5rem;
+    color: var(--primary-green);
+    font-weight: 600;
+    margin: 0;
+}
+
+.statusBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 138, 75, 0.08);
+    border: 1px solid var(--accent-lime);
+}
+
+.statusIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.openText {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-green);
+}
+
+.closedText {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #d32f2f;
+}
+
+.scheduleList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.scheduleItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+.scheduleItem:hover {
+    background: rgba(0, 138, 75, 0.05);
+}
+
+.today {
+    background: rgba(196, 214, 0, 0.15);
+    border: 1px solid var(--accent-lime);
+    font-weight: 600;
+}
+
+.dayName {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.dayHours {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+.today .dayName,
+.today .dayHours {
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hoursCard {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .clockIcon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .scheduleItem {
+        padding: 0.6rem 0.75rem;
+    }
+
+    .dayName,
+    .dayHours {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hoursContainer {
+        max-width: 100%;
+    }
+
+    .hoursCard {
+        padding: 1.25rem;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .statusBadge {
+        padding: 0.6rem 0.85rem;
+    }
+
+    .scheduleItem {
+        padding: 0.5rem 0.6rem;
+    }
+
+    .dayName,
+    .dayHours {
+        font-size: 0.8rem;
+    }
+}

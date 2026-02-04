@@ -1,0 +1,302 @@
+.navContainer {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 90%;
+    max-width: 600px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    /* Center the links since logo is gone */
+    align-items: center;
+    padding: 1rem 3rem;
+    /* Adjusted padding */
+    border-radius: 9999px;
+    /* Pill shape */
+    background: rgba(255, 255, 255, 0.92);
+    /* More opaque */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid var(--primary-green);
+    /* Brand color border */
+    box-shadow: 0 4px 20px rgba(0, 138, 75, 0.15);
+    /* Greenish shadow */
+    transition: all 0.3s ease;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-dark);
+    font-family: var(--font-inter);
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: normal;
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+
+.link:hover {
+    background: rgba(0, 138, 75, 0.1);
+}
+
+.link span {
+    font-size: 0.7rem;
+    margin-top: 0.15rem;
+}
+
+.chevron {
+    position: absolute;
+    bottom: -2px;
+    color: var(--primary-green);
+    transition: transform 0.3s ease;
+}
+
+.chevronOpen {
+    transform: rotate(180deg);
+}
+
+.menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+    /* Ensure it inherits all font properties */
+    color: inherit;
+    /* Ensure it inherits color */
+}
+
+/* Dropdown Container */
+.dropdownContainer {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 20px;
+    /* Space for the branch line */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+/* Visibility when open */
+.dropdownContainer.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Button reset for Menu toggle to match Links */
+.menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    display: flex;
+    /* Ensure flex behavior matches .link */
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Branch Logic */
+.branchLine {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1.5px;
+    height: 20px;
+    background: var(--primary-green);
+    transform: translateX(-50%);
+}
+
+.dropdownMenu {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid var(--primary-green);
+    border-radius: 20px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 220px;
+    box-shadow: 0 4px 20px rgba(0, 138, 75, 0.15);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .navContainer {
+        padding: 1rem;
+    }
+
+    .nav {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .links {
+        gap: 1rem;
+    }
+
+    .link {
+        font-size: 0.7rem;
+        padding: 0.4rem;
+    }
+
+    .icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navContainer {
+        top: 1rem;
+        padding: 0.5rem 1rem;
+        width: 95%;
+    }
+
+    .nav {
+        padding: 0.6rem 1rem;
+    }
+
+    .links {
+        gap: 0.5rem;
+    }
+
+    .link {
+        font-size: 0.65rem;
+        padding: 0.3rem;
+        gap: 0.2rem;
+    }
+
+    .link span {
+        font-size: 0.6rem;
+    }
+
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .chevron {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dropdownMenu {
+        min-width: 200px;
+        padding: 0.75rem;
+    }
+
+    .dropdownItem {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navContainer {
+        top: 0.5rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .nav {
+        padding: 0.5rem 0.75rem;
+        border-radius: 20px;
+    }
+
+    .links {
+        gap: 0.25rem;
+    }
+
+    .link {
+        font-size: 0.6rem;
+        padding: 0.25rem;
+    }
+
+    .link span {
+        font-size: 0.55rem;
+    }
+
+    .icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .dropdownMenu {
+        min-width: 180px;
+        padding: 0.5rem;
+    }
+
+    .dropdownItem {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: var(--text-dark);
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    border-radius: 9999px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.dropdownItem:hover {
+    background: rgba(0, 138, 75, 0.1);
+    color: var(--primary-green);
+}
+
+/* Tree branches inside menu (optional decoration) */
+.dropdownItem::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 10px;
+    height: 1px;
+    background: var(--primary-green);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.dropdownItem:hover::before {
+    opacity: 0.5;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-green);
+}

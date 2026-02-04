@@ -1,66 +1,118 @@
+import Navbar from "./components/Navbar";
+import SecondaryNav from "./components/SecondaryNav";
+import Footer from "./components/Footer";
+import OpeningHours from "./components/OpeningHours";
+import RealTimeWidget from "./components/RealTimeWidget";
 import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <main className="min-h-screen relative overflow-hidden">
+        {/* Authentic gradient background with brand colors */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f0f9f4] via-[#ffffff] to-[#f5fef0]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[rgba(196,214,0,0.15)] via-transparent to-transparent" />
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[rgba(0,138,75,0.12)] via-transparent to-transparent" />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+
+        <Navbar />
+        <SecondaryNav />
+
+        {/* Hero Section */}
+        <section className={styles.hero}>
+          <h1 className={styles.heroTitle}>Zielony Talerzyk</h1>
+          <p className={styles.heroSubtitle}>
+            Smak natury na Twoim talerzu
+          </p>
+        </section>
+
+        {/* Content Sections */}
+        <div className={styles.contentSection}>
+          {/* Section 1 */}
+          <div className={styles.card}>
+            <div className={styles.cardContent}>
+              <h2 className={styles.cardTitle}>Świeże, Ekologiczne Składniki</h2>
+              <p className={styles.cardText}>
+                W naszej restauracji wierzymy, że najzdrowsze i najsmaczniejsze jedzenie tworzone jest od podstaw, ze świeżych, ekologicznych składników.
+                <br /><br />
+                Dlatego wszystkie dania przygotowujemy z sezonowych, lokalnych produktów od naszych sprawdzonych dostawców – bez sztucznych dodatków i ulepszaczy.
+              </p>
+            </div>
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/food1.jpg"
+              alt="Świeże danie"
+              width={600}
+              height={400}
+              className={styles.cardImage}
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          {/* Section 2 */}
+          <div className={`${styles.card} ${styles.cardReverse}`}>
+            <Image
+              src="/food2.jpg"
+              alt="Różnorodne dania"
+              width={600}
+              height={400}
+              className={styles.cardImage}
+            />
+            <div className={styles.cardContent}>
+              <h2 className={styles.cardTitle}>Dla Każdego Coś Smacznego</h2>
+              <p className={styles.cardText}>
+                W Zielonym Talerzyku każdy znajdzie coś dla siebie: serwujemy dania wegańskie, wegetariańskie, oraz z mięsem.
+                <br /><br />
+                Jedzenia takiego, jak nasze, nie znajdziesz nigdzie na świecie – bo powstaje z najlepszych, starannie wyselekcjonowanych składników.
+              </p>
+            </div>
+          </div>
+
+          {/* Section 3 */}
+          <div className={styles.card}>
+            <div className={styles.cardContent}>
+              <h2 className={styles.cardTitle}>Wyjątkowe Miejsce</h2>
+              <p className={styles.cardText}>
+                Zielony Talerzyk to wyjątkowa restauracja w centrum Lublina, na starym mieście, obok lubelskiego deptaka.
+                <br /><br />
+                Nasze menu obejmuje dania slow food, które są przyrządzane z najwyższą starannością, zawsze z użyciem świeżych i naturalnych składników.
+              </p>
+            </div>
+            <Image
+              src="/interior.jpg"
+              alt="Wnętrze restauracji"
+              width={600}
+              height={400}
+              className={styles.cardImage}
+            />
+          </div>
+
+          {/* Full Width Section */}
+          <div className={`${styles.card} ${styles.fullWidthCard}`}>
+            <div className={styles.cardContent}>
+              <h2 className={styles.cardTitle}>Restauracja, której długo nie zapomnisz!</h2>
+              <p className={styles.cardText}>
+                Nasza restauracja jest przyjazna dla wszystkich, którzy cenią sobie pyszne i wysokiej jakości jedzenie, w tym również dla dzieci.
+                Jeśli jesteś weganinem lub wegetarianinem, na pewno znajdziesz u nas coś dla siebie - w naszym menu znajdują się propozycje dopasowane również do Twoich potrzeb.
+                <br /><br />
+                A wszystko to w samym centrum Lublina, na lubelskiej starówce. Zapraszamy!
+              </p>
+            </div>
+          </div>
+
+          {/* Widgets Section */}
+          <div className={styles.widgetsGrid}>
+            <div className={styles.hoursWrapper}>
+              <OpeningHours />
+            </div>
+            <div className={styles.timeWrapper}>
+              <RealTimeWidget />
+            </div>
+          </div>
         </div>
       </main>
-    </div>
+
+      <Footer />
+    </>
   );
 }
