@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google"; // Changed fonts
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="pl"> {/* Changed lang to Polish */}
       <body className={`${playfair.variable} ${inter.variable}`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
