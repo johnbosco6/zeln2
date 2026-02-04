@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import SecondaryNav from "../components/SecondaryNav";
 import Footer from "../components/Footer";
-import styles from "./dostawa.module.css";
+import styles from "../page.module.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

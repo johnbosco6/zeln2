@@ -3,7 +3,7 @@ import SecondaryNav from "../components/SecondaryNav";
 import Footer from "../components/Footer";
 import type { Metadata } from "next";
 import Image from "next/image";
-import styles from "./imprezy.module.css";
+import styles from "../page.module.css";
 
 export const metadata: Metadata = {
     title: "Imprezy Okolicznościowe",
