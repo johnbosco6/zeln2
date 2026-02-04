@@ -1,16 +1,17 @@
 .container {
     min-height: 100vh;
-    padding: 8rem 2rem 4rem;
+    padding: 12rem 2rem 4rem;
     max-width: 900px;
     margin: 0 auto;
 }
 
 .title {
     font-family: var(--font-playfair);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 6vw, 3.5rem);
     text-align: center;
     color: var(--primary-green);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
 }
 
 .faqList {
@@ -62,17 +63,41 @@
     border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* For mobile */
 @media (max-width: 768px) {
     .container {
-        padding: 6rem 1rem 3rem;
+        padding: 10rem 1rem 3rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
     }
 
     .faqItem {
-        padding: 1.25rem 1.5rem;
+        padding: 1rem 1.25rem;
+        border-radius: 16px;
     }
 
     .question {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        gap: 0.5rem;
+    }
+
+    .answer {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 9rem 0.5rem 2rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .question {
+        font-size: 0.95rem;
     }
 }

@@ -1,6 +1,6 @@
 .container {
     min-height: 100vh;
-    padding: 8rem 2rem 4rem;
+    padding: 12rem 2rem 4rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -217,7 +217,7 @@
 
 @media (max-width: 1024px) {
     .container {
-        padding: 7rem 1.5rem 3rem;
+        padding: 11rem 1.5rem 3rem;
     }
 
     .menuGrid {
@@ -227,7 +227,7 @@
 
 @media (max-width: 768px) {
     .container {
-        padding: 6rem 1.25rem 3rem;
+        padding: 10rem 1.25rem 3rem;
     }
 
     .title {
@@ -279,7 +279,7 @@
 
 @media (max-width: 480px) {
     .container {
-        padding: 5rem 1rem 2rem;
+        padding: 9rem 1rem 2rem;
     }
 
     .title {
