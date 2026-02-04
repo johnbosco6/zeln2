@@ -1,8 +1,12 @@
 import Navbar from "../../components/Navbar";
 import SecondaryNav from "../../components/SecondaryNav";
-import styles from "../menu.module.css";
+import Footer from "../../components/Footer";
+import MenuDisplay from "../../components/MenuDisplay";
+import { menuData } from "../../data/menuData";
 
 export default function NaszeWyroby() {
+    const data = menuData["nasze-wyroby"];
+
     return (
         <>
             <main className="min-h-screen relative overflow-hidden">
@@ -15,75 +19,9 @@ export default function NaszeWyroby() {
                 <Navbar />
                 <SecondaryNav />
 
-                <div className={styles.menuPage}>
-                    <div className={styles.menuHeader}>
-                        <h1 className={styles.menuTitle}>Nasze Wyroby</h1>
-                        <p className={styles.menuSubtitle}>Domowe pieczywo i specjały</p>
-                    </div>
-
-                    <div className={styles.menuContainer}>
-                        <div className={styles.menuSection}>
-                            <h2 className={styles.sectionTitle}>Chleby</h2>
-                            <div className={styles.menuItems}>
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Chleb orkiszowy jasny
-                                        </div>
-                                        <div className={styles.itemCategory}>własnego wypieku, 100% mąka orkiszowa, na zakwasie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>16zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Chleb żytni
-                                        </div>
-                                        <div className={styles.itemCategory}>na zakwasie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>14zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Chleb gryczany <span className={styles.itemNote}>[BG]</span>
-                                        </div>
-                                        <div className={styles.itemCategory}>na niepalonej kaszy gryczanej</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>14zł</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.menuSection}>
-                            <h2 className={styles.sectionTitle}>Nasze Specjały</h2>
-                            <div className={styles.menuItems}>
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Zakwas buraczany
-                                        </div>
-                                        <div className={styles.itemCategory}>Butelka 250 ml</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>9zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Esencja imbirowa
-                                        </div>
-                                        <div className={styles.itemCategory}>Butelka 300 ml</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>18zł</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {data ? <MenuDisplay data={data} /> : <div style={{ padding: '10rem', textAlign: 'center' }}>Menu loading...</div>}
             </main>
+            <Footer />
         </>
     );
 }

@@ -1,8 +1,12 @@
 import Navbar from "../../components/Navbar";
 import SecondaryNav from "../../components/SecondaryNav";
-import styles from "../menu.module.css";
+import Footer from "../../components/Footer";
+import MenuDisplay from "../../components/MenuDisplay";
+import { menuData } from "../../data/menuData";
 
 export default function DaniaGlowne() {
+    const data = menuData["dania-glowne"];
+
     return (
         <>
             <main className="min-h-screen relative overflow-hidden">
@@ -15,145 +19,9 @@ export default function DaniaGlowne() {
                 <Navbar />
                 <SecondaryNav />
 
-                <div className={styles.menuPage}>
-                    <div className={styles.menuHeader}>
-                        <h1 className={styles.menuTitle}>Dania Główne</h1>
-                        <p className={styles.menuSubtitle}>Starannie przygotowane specjały</p>
-                    </div>
-
-                    <div className={styles.menuContainer}>
-                        <div className={styles.menuSection}>
-                            <h2 className={styles.sectionTitle}>Dania Mięsne</h2>
-                            <div className={styles.menuItems}>
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Żebro wołowe/ puree z kalafiora/ sos RWS z czarnym czosnkiem/ ogórki po azjatycku
-                                        </div>
-                                        <div className={styles.itemCategory}>danie mięsne</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>63zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Filet z pstrąga z Pustelni/ kluski marchewkowe/ jarmuż/ sos Beuerre Blanc/ olej ziołowy
-                                        </div>
-                                        <div className={styles.itemCategory}>danie mięsne</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>59zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Burger po Lubelsku - Brioche z cebulą i makiem/ pulled pork/ kimchi/ konfitura z czerwonej cebuli/ ser koryciński/ majonez z fermentowanym czosnkiem/ opiekane ziemniaki
-                                        </div>
-                                        <div className={styles.itemCategory}>danie mięsne</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>55zł</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.menuSection}>
-                            <h2 className={styles.sectionTitle}>Dania Wegetariańskie</h2>
-                            <div className={styles.menuItems}>
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Kopytka grzybowe/ emulsja z estragonem/ grzyby shimeji
-                                        </div>
-                                        <div className={styles.itemCategory}>danie wegetariańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>43zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Leniwe/ frużelina/ owoce/ kwaśna śmietana
-                                        </div>
-                                        <div className={styles.itemCategory}>danie wegetariańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>39zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Stek z kapusty włoskiej/ gorgonzola D.O.P/ ziemniak/ olej chilli
-                                        </div>
-                                        <div className={styles.itemCategory}>danie wegetariańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>39zł</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.menuSection}>
-                            <h2 className={styles.sectionTitle}>Dania Wegańskie</h2>
-                            <div className={styles.menuItems}>
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Pulpeciki/ ciecierzyca/ tofu/ nori/ sos tatarski/ burak/ roszponka/ komosa ryżowa
-                                        </div>
-                                        <div className={styles.itemCategory}>danie wegańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>46zł</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={styles.menuSection}>
-                            <h2 className={styles.sectionTitle}>Menu Dziecięce</h2>
-                            <div className={styles.menuItems}>
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Paluszki rybne/ łódeczki ziemniaczane/ mizeria
-                                        </div>
-                                        <div className={styles.itemCategory}>danie mięsne</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>29zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Pulpeciki z indyka w sosie pomidorowo-śmietanowym (2 szt)/ łódeczki ziemniaczane/ mizeria
-                                        </div>
-                                        <div className={styles.itemCategory}>danie mięsne</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>29zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Leniwe/ frużelina/ owoce/ kwaśna śmietana
-                                        </div>
-                                        <div className={styles.itemCategory}>danie wegetariańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>29zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Rosół z makaronem i marchewką (200ml)
-                                        </div>
-                                        <div className={styles.itemCategory}>danie mięsne</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>18zł</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {data ? <MenuDisplay data={data} /> : <div style={{ padding: '10rem', textAlign: 'center' }}>Menu loading...</div>}
             </main>
+            <Footer />
         </>
     );
 }

@@ -1,8 +1,12 @@
 import Navbar from "../../components/Navbar";
 import SecondaryNav from "../../components/SecondaryNav";
-import styles from "../menu.module.css";
+import Footer from "../../components/Footer";
+import MenuDisplay from "../../components/MenuDisplay";
+import { menuData } from "../../data/menuData";
 
 export default function Pierogi() {
+    const data = menuData["pierogi"];
+
     return (
         <>
             <main className="min-h-screen relative overflow-hidden">
@@ -15,49 +19,9 @@ export default function Pierogi() {
                 <Navbar />
                 <SecondaryNav />
 
-                <div className={styles.menuPage}>
-                    <div className={styles.menuHeader}>
-                        <h1 className={styles.menuTitle}>Pierogi</h1>
-                        <p className={styles.menuSubtitle}>Tradycyjne polskie smaki</p>
-                    </div>
-
-                    <div className={styles.menuContainer}>
-                        <div className={styles.menuSection}>
-                            <div className={styles.menuItems}>
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Meat dumplings/ black pudding/ shallot/ roasted apple/ dill
-                                        </div>
-                                        <div className={styles.itemCategory}>meat dish</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>39 PLN</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Russian pierogi/onion lard/smoked cream
-                                        </div>
-                                        <div className={styles.itemCategory}>vegetarian dish</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>39 PLN</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Vegan pierogi / dried tomato / spinach / celery cracklings / olive oil
-                                        </div>
-                                        <div className={styles.itemCategory}>vegan dish</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>39 PLN</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {data ? <MenuDisplay data={data} /> : <div style={{ padding: '10rem', textAlign: 'center' }}>Menu loading...</div>}
             </main>
+            <Footer />
         </>
     );
 }

@@ -6,7 +6,44 @@
 .menuHeader {
     text-align: center;
     margin-bottom: 3rem;
+    padding: 0 1rem;
 }
+
+.filterContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+.filterBtn {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(0, 138, 75, 0.2);
+    padding: 0.6rem 1.5rem;
+    border-radius: 9999px;
+    font-family: var(--font-inter);
+    font-weight: 600;
+    color: var(--primary-green);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filterBtn:hover {
+    background: white;
+    border-color: var(--primary-green);
+    transform: translateY(-2px);
+}
+
+.filterBtn.active {
+    background: var(--primary-green);
+    color: white;
+    border-color: var(--primary-green);
+    box-shadow: 0 4px 12px rgba(0, 138, 75, 0.2);
+}
+
 
 .menuTitle {
     font-family: var(--font-playfair);

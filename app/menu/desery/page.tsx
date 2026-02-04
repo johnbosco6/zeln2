@@ -1,8 +1,12 @@
 import Navbar from "../../components/Navbar";
 import SecondaryNav from "../../components/SecondaryNav";
-import styles from "../menu.module.css";
+import Footer from "../../components/Footer";
+import MenuDisplay from "../../components/MenuDisplay";
+import { menuData } from "../../data/menuData";
 
 export default function Desery() {
+    const data = menuData["desery"];
+
     return (
         <>
             <main className="min-h-screen relative overflow-hidden">
@@ -15,79 +19,9 @@ export default function Desery() {
                 <Navbar />
                 <SecondaryNav />
 
-                <div className={styles.menuPage}>
-                    <div className={styles.menuHeader}>
-                        <h1 className={styles.menuTitle}>Desery</h1>
-                        <p className={styles.menuSubtitle}>Słodkie zakończenie posiłku</p>
-                    </div>
-
-                    <div className={styles.menuContainer}>
-                        <div className={styles.menuSection}>
-                            <div className={styles.menuItems}>
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Creme brûlée
-                                        </div>
-                                        <div className={styles.itemCategory}>wegetariańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>28zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Crumble z prażonym jabłkiem/ creme anglaise/ kruszonka
-                                        </div>
-                                        <div className={styles.itemCategory}>wegetariańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>29zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Sernik waniliowy z karmelem <span className={styles.itemNote}>[BG]</span>
-                                        </div>
-                                        <div className={styles.itemCategory}>wegetariańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>24zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Ciasto marchewkowe
-                                        </div>
-                                        <div className={styles.itemCategory}>wegańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>17zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Brownie <span className={styles.itemNote}>[BG]</span>
-                                        </div>
-                                        <div className={styles.itemCategory}>wegetariańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>15zł</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Blondie na belgijskiej białej czekoladzie
-                                        </div>
-                                        <div className={styles.itemCategory}>wegetariańskie</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>15zł</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {data ? <MenuDisplay data={data} /> : <div style={{ padding: '10rem', textAlign: 'center' }}>Menu loading...</div>}
             </main>
+            <Footer />
         </>
     );
 }

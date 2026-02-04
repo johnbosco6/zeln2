@@ -1,8 +1,12 @@
 import Navbar from "../../components/Navbar";
 import SecondaryNav from "../../components/SecondaryNav";
-import styles from "../menu.module.css";
+import Footer from "../../components/Footer";
+import MenuDisplay from "../../components/MenuDisplay";
+import { menuData } from "../../data/menuData";
 
 export default function Salatki() {
+    const data = menuData["salatki"];
+
     return (
         <>
             <main className="min-h-screen relative overflow-hidden">
@@ -15,39 +19,9 @@ export default function Salatki() {
                 <Navbar />
                 <SecondaryNav />
 
-                <div className={styles.menuPage}>
-                    <div className={styles.menuHeader}>
-                        <h1 className={styles.menuTitle}>Sałatki</h1>
-                        <p className={styles.menuSubtitle}>Świeże i zdrowe kompozycje</p>
-                    </div>
-
-                    <div className={styles.menuContainer}>
-                        <div className={styles.menuSection}>
-                            <div className={styles.menuItems}>
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Bowl/ bean paste/ root vegetables/ Brussels sprouts/ pickled pumpkin
-                                        </div>
-                                        <div className={styles.itemCategory}>Vegan</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>49 PLN</div>
-                                </div>
-
-                                <div className={styles.menuItem}>
-                                    <div className={styles.itemContent}>
-                                        <div className={styles.itemName}>
-                                            Caesar/ chicken/ bacon/ egg/ romaine lettuce/ croutons/ Caesar dressing/ Grana Padano
-                                        </div>
-                                        <div className={styles.itemCategory}>Meat</div>
-                                    </div>
-                                    <div className={styles.itemPrice}>49 PLN</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {data ? <MenuDisplay data={data} /> : <div style={{ padding: '10rem', textAlign: 'center' }}>Menu loading...</div>}
             </main>
+            <Footer />
         </>
     );
 }
