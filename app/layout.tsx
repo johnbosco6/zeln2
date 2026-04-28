@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google"; // Changed fonts
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import CookieBanner from "./components/CookieBanner";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -60,6 +61,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <CookieBanner />
         <Analytics />
       </body>
     </html>

@@ -92,6 +92,12 @@ export default function Footer() {
                         <Link href="/faq" className={styles.menuLink}>
                             <span>FAQ (Często Zadawane Pytania) ❓</span>
                         </Link>
+                        <Link href="/polityka-prywatnosci" className={styles.menuLink}>
+                            <span>Polityka Prywatności</span>
+                        </Link>
+                        <Link href="/regulamin" className={styles.menuLink}>
+                            <span>Regulamin</span>
+                        </Link>
                     </div>
                 </div>
 
@@ -99,17 +105,17 @@ export default function Footer() {
                 <div className={styles.footerSection}>
                     <h3>Kontakt</h3>
                     <div className={styles.contactInfo}>
-                        <a href="tel:+48500068241" className={styles.contactLink}>
+                        <a href="tel:+48574933988" className={styles.contactLink}>
                             <Phone size={18} />
-                            <span>500 068 241</span>
+                            <span>574 933 988</span>
                         </a>
-                        <a href="mailto:zielonatalerzyk@protonmail.com" className={styles.contactLink}>
+                        <a href="mailto:basmalublin@gmail.com" className={styles.contactLink}>
                             <Mail size={18} />
-                            <span>zielonatalerzyk@protonmail.com</span>
+                            <span>basmalublin@gmail.com</span>
                         </a>
                         <div className={styles.contactLink}>
                             <MapPin size={18} />
-                            <span>ul. Królewska 3<br />Lublin, Poland</span>
+                            <span>ul. Krakowskie Przedmieście 3<br />20-002 Lublin</span>
                         </div>
                     </div>
                 </div>
@@ -147,6 +153,17 @@ export default function Footer() {
                             <span className={styles.hourTime}>12:00 - 23:00</span>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div className={styles.footerLegal}>
+                <div className={styles.companyInfo}>
+                    <h4>Dane firmowe:</h4>
+                    <p>Jakub Wiśniewski Browar Dziki Wschód | ul. Krakowskie Przedmieście 3, 20-002 Lublin | NIP: 714 185 55 52</p>
+                </div>
+                <div className={styles.legalLinks}>
+                    <Link href="/polityka-prywatnosci">Polityka Prywatności</Link>
+                    <Link href="/regulamin">Regulamin</Link>
                 </div>
             </div>
 
