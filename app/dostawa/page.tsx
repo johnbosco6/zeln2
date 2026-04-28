@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
-import SecondaryNav from "../components/SecondaryNav";
-import Footer from "../components/Footer";
+
 import styles from "../page.module.css";
 import type { Metadata } from "next";
 
@@ -23,7 +22,7 @@ export default function Dostawa() {
                 </div>
 
                 <Navbar />
-                <SecondaryNav />
+
 
                 {/* Hero Section */}
                 <section className={styles.hero}>
@@ -31,12 +30,13 @@ export default function Dostawa() {
                     <p className={styles.heroSubtitle}>
                         Świeże dania prosto do Ciebie
                     </p>
+                    <div className={styles.heroBadge}>Dostawa do Domu & Pracy</div>
                 </section>
 
                 {/* Content Sections */}
                 <div className={styles.contentSection}>
                     {/* Main Info Card */}
-                    <div className={`${styles.card} ${styles.fullWidthCard}`}>
+                    <div className={styles.card}>
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>Dostawa do Domu lub Pracy</h2>
                             <p className={styles.cardText}>
@@ -48,6 +48,16 @@ export default function Dostawa() {
                                     Tel. 500 068 241
                                 </strong>
                             </p>
+                        </div>
+                        <div className={styles.relative}>
+                            <Image
+                                src="/images/raw/DSC_8983_surowe.webp"
+                                alt="Dostawa jedzenia"
+                                width={600}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>Smaczna dostawa</div>
                         </div>
                     </div>
 
@@ -63,24 +73,34 @@ export default function Dostawa() {
                                 Koszt dostawy na terenie miasta Lublin od 11 zł.
                             </p>
                         </div>
-                        <Image
-                            src="/food1.jpg"
-                            alt="Świeże danie"
-                            width={600}
-                            height={400}
-                            className={styles.cardImage}
-                        />
+                        <div className={styles.relative}>
+                            <Image
+                                src="/images/catering/DSC_3440bm.webp"
+                                alt="Świeże danie"
+                                width={600}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>
+                                Szybka Dostawa
+                            </div>
+                        </div>
                     </div>
 
                     {/* Section with Image 2 */}
                     <div className={`${styles.card} ${styles.cardReverse}`}>
-                        <Image
-                            src="/catering1.jpg"
-                            alt="Dostawa jedzenia"
-                            width={600}
-                            height={400}
-                            className={styles.cardImage}
-                        />
+                        <div className={styles.relative}>
+                            <Image
+                                src="/images/catering/DSC_3457bm.webp"
+                                alt="Dostawa jedzenia"
+                                width={600}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>
+                                Świeże Składniki
+                            </div>
+                        </div>
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>Świeże Składniki</h2>
                             <p className={styles.cardText}>
@@ -93,14 +113,18 @@ export default function Dostawa() {
 
                     {/* Final Section */}
                     <div className={`${styles.card} ${styles.fullWidthCard}`}>
-                        <Image
-                            src="/catering3.jpg"
-                            alt="Zdrowe jedzenie"
-                            width={800}
-                            height={400}
-                            className={styles.cardImage}
-                            style={{ maxWidth: '600px', margin: '0 auto 2rem' }}
-                        />
+                        <div className={styles.relative} style={{ maxWidth: '600px', margin: '0 auto 2rem' }}>
+                            <Image
+                                src="/images/catering/DSC_3461bm.webp"
+                                alt="Zdrowe jedzenie"
+                                width={800}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>
+                                Zamów Teraz
+                            </div>
+                        </div>
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>Zamów Teraz!</h2>
                             <p className={styles.cardText}>
@@ -110,10 +134,35 @@ export default function Dostawa() {
                             </p>
                         </div>
                     </div>
+                    {/* Raw Photo Strip */}
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(3, 1fr)',
+                        gap: '0.75rem',
+                        marginTop: '1rem',
+                        borderRadius: '20px',
+                        overflow: 'hidden',
+                    }}>
+                        {[
+                            { src: '/images/raw/DSC_8934_surowe.webp', label: 'Świeżość' },
+                            { src: '/images/raw/DSC_8940_surowe.webp', label: 'Jakość' },
+                            { src: '/images/raw/DSC_8942_surowe.webp', label: 'Smak' },
+                        ].map((item) => (
+                            <div key={item.src} className={styles.relative} style={{ height: '200px' }}>
+                                <Image
+                                    src={item.src}
+                                    alt={item.label}
+                                    fill
+                                    sizes="33vw"
+                                    style={{ objectFit: 'cover' }}
+                                />
+                                <div className={styles.imageOverlayGlass}>{item.label}</div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </main>
 
-            <Footer />
         </>
     );
 }

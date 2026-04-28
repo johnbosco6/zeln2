@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
-import SecondaryNav from "../components/SecondaryNav";
-import Footer from "../components/Footer";
+
 import Image from "next/image";
 import styles from "../page.module.css";
 import menuStyles from "./catering.module.css";
@@ -24,7 +23,7 @@ export default function Catering() {
                 </div>
 
                 <Navbar />
-                <SecondaryNav />
+
 
                 {/* Hero Section */}
                 <section className={styles.hero}>
@@ -32,6 +31,7 @@ export default function Catering() {
                     <p className={styles.heroSubtitle}>
                         Najsmaczniejszy catering w okolicy
                     </p>
+                    <div className={styles.heroBadge}>Catering na każdą okazję</div>
                 </section>
 
                 {/* Content Sections */}
@@ -46,13 +46,18 @@ export default function Catering() {
                                 Przygotujemy specjalnie na tę okazję menu, zajmiemy się przygotowaniem dań i dostarczymy je do wybranego przez Ciebie miejsca.
                             </p>
                         </div>
-                        <Image
-                            src="/catering1.jpg"
-                            alt="Catering"
-                            width={600}
-                            height={400}
-                            className={styles.cardImage}
-                        />
+                        <div className={styles.relative}>
+                            <Image
+                                src="/images/catering/DSC_3457bm.webp"
+                                alt="Catering"
+                                width={600}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>
+                                Pyszne Dania
+                            </div>
+                        </div>
                     </div>
 
                     {/* Catering Categories Grid */}
@@ -347,15 +352,162 @@ export default function Catering() {
                         </div>
                     </div>
 
+                    {/* Photo Gallery */}
+                    <div className={menuStyles.gallerySection}>
+                        <h2 className={menuStyles.galleryHeading}>Galeria Cateringu</h2>
+                        <p className={menuStyles.gallerySubtitle}>Nasze dania przemawiają same za siebie</p>
+                        <div className={menuStyles.galleryGrid}>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3437bm.webp" alt="Catering danie" width={600} height={800} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Catering</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3438bm.webp" alt="Catering danie" width={600} height={400} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Finger Food</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3440bm.webp" alt="Catering danie" width={600} height={450} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Ekologiczne</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3442bm.webp" alt="Catering danie" width={600} height={500} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Smak</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3444bm.webp" alt="Catering danie" width={600} height={400} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Dania Główne</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3447bm.webp" alt="Catering danie" width={600} height={350} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Świeże Składniki</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3448bm.webp" alt="Catering danie" width={600} height={420} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Wegetariańskie</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3451bm.webp" alt="Catering danie" width={600} height={460} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Desery</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3457bm.webp" alt="Catering danie" width={600} height={400} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Pyszne Dania</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3459bm.webp" alt="Catering danie" width={600} height={440} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Napoje</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3460bm.webp" alt="Catering danie" width={600} height={400} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Catering Lublin</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3461bm.webp" alt="Catering danie" width={600} height={800} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Mięsne</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3463bm.webp" alt="Catering danie" width={600} height={380} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Na Każdą Okazję</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3495bm.webp" alt="Catering danie" width={600} height={420} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Świeżość</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3511bm.webp" alt="Catering danie" width={600} height={400} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Elegancja</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_3521bm.webp" alt="Catering danie" width={600} height={400} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Przystawki</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_9694bm.webp" alt="Catering danie" width={600} height={400} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Smaczne</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_9702bm.webp" alt="Catering danie" width={600} height={440} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Sałatki</span>
+                                </div>
+                            </div>
+
+                            <div className={menuStyles.galleryItem}>
+                                <Image src="/images/catering/DSC_9708bm.webp" alt="Catering danie" width={600} height={400} />
+                                <div className={menuStyles.galleryItemOverlay}>
+                                    <span className={menuStyles.galleryItemLabel}>Nasze Wyroby</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                     {/* Image Section */}
                     <div className={`${styles.card} ${styles.cardReverse}`}>
-                        <Image
-                            src="/catering2.jpg"
-                            alt="Catering dania"
-                            width={600}
-                            height={400}
-                            className={styles.cardImage}
-                        />
+                        <div className={styles.relative}>
+                            <Image
+                                src="/images/catering/DSC_3495bm.webp"
+                                alt="Catering dania"
+                                width={600}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>
+                                Świeżość i Jakość
+                            </div>
+                        </div>
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>Dla Każdej Okazji</h2>
                             <p className={styles.cardText}>
@@ -365,10 +517,10 @@ export default function Catering() {
                             </p>
                         </div>
                     </div>
+
                 </div>
             </main>
 
-            <Footer />
         </>
     );
 }

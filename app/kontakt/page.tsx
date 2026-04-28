@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar";
-import SecondaryNav from "../components/SecondaryNav";
-import Footer from "../components/Footer";
+
 import OpeningHours from "../components/OpeningHours";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Instagram, Facebook, Clock } from "lucide-react";
 import styles from "./kontakt.module.css";
+import pageStyles from "../page.module.css";
 
 export default function Kontakt() {
     return (
@@ -16,8 +16,7 @@ export default function Kontakt() {
                     <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[rgba(0,138,75,0.12)] via-transparent to-transparent" />
                 </div>
 
-                <Navbar />
-                <SecondaryNav />
+
 
                 {/* Hero Section */}
                 <section className={styles.hero}>
@@ -25,7 +24,39 @@ export default function Kontakt() {
                     <p className={styles.heroSubtitle}>
                         Skontaktuj się z nami - chętnie odpowiemy na wszystkie pytania
                     </p>
+                    <div className={styles.heroBadge}>Zielony Talerzyk &bull; Lublin</div>
                 </section>
+
+                {/* Photo Strip */}
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(5, 1fr)',
+                    gap: '0.6rem',
+                    maxWidth: '1200px',
+                    margin: '0 auto 2rem',
+                    padding: '0 2rem',
+                    borderRadius: '20px',
+                    overflow: 'hidden',
+                }}>
+                    {[
+                        { src: '/images/raw/DSC_8954_surowe.webp', label: 'Kuchnia' },
+                        { src: '/images/raw/DSC_8955_surowe.webp', label: 'Dania' },
+                        { src: '/images/raw/DSC_8959_surowe.webp', label: 'Smaki' },
+                        { src: '/images/raw/DSC_8998_surowe.webp', label: 'Jakość' },
+                        { src: '/images/raw/DSC_9004_surowe.webp', label: 'Wieżno' },
+                    ].map((item) => (
+                        <div key={item.src} className={pageStyles.relative} style={{ height: '180px' }}>
+                            <Image
+                                src={item.src}
+                                alt={item.label}
+                                fill
+                                sizes="20vw"
+                                style={{ objectFit: 'cover' }}
+                            />
+                            <div className={pageStyles.imageOverlayGlass}>{item.label}</div>
+                        </div>
+                    ))}
+                </div>
 
                 {/* Contact Content */}
                 <div className={styles.contactContainer}>
@@ -139,7 +170,7 @@ export default function Kontakt() {
                 </div>
             </main>
 
-            <Footer />
+
         </>
     );
 }

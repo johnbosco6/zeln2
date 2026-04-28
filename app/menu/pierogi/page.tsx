@@ -1,6 +1,4 @@
-import Navbar from "../../components/Navbar";
-import SecondaryNav from "../../components/SecondaryNav";
-import Footer from "../../components/Footer";
+
 import MenuDisplay from "../../components/MenuDisplay";
 import { menuData } from "../../data/menuData";
 
@@ -17,11 +15,10 @@ export default function Pierogi() {
                 </div>
 
                 <Navbar />
-                <SecondaryNav />
+
 
                 {data ? <MenuDisplay data={data} /> : <div style={{ padding: '10rem', textAlign: 'center' }}>Menu loading...</div>}
             </main>
-            <Footer />
         </>
     );
 }

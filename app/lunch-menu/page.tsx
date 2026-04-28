@@ -1,6 +1,4 @@
-import Navbar from "../components/Navbar";
-import SecondaryNav from "../components/SecondaryNav";
-import Footer from "../components/Footer";
+
 import LunchMenuClient from "./LunchMenuClient";
 import type { Metadata } from "next";
 
@@ -19,12 +17,11 @@ export default function LunchMenuPage() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#f0fdf4] via-transparent to-[#fdfcf2] opacity-80" />
                 </div>
 
-                <Navbar />
-                <SecondaryNav />
+
 
                 <LunchMenuClient />
             </main>
-            <Footer />
+
         </>
     );
 }

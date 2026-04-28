@@ -61,7 +61,7 @@
 }
 
 .menuContainer {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem 4rem;
 }
@@ -87,19 +87,22 @@
 }
 
 .menuItems {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
 .menuItem {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding: 1.25rem;
-    border-radius: 12px;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px dashed rgba(0, 138, 75, 0.2);
     transition: all 0.2s ease;
-    border: 1px solid transparent;
+}
+
+.menuItem:last-child {
+    border-bottom: none;
 }
 
 .menuItem:hover {
@@ -150,18 +153,13 @@
         padding-top: 10rem;
     }
 
+    .menuItems {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
     .menuItem {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .itemContent {
-        padding-right: 0;
-        margin-bottom: 0.75rem;
-    }
-
-    .itemPrice {
-        padding-top: 0;
+        padding: 1.25rem 0;
     }
 
     .menuContainer {
@@ -245,5 +243,90 @@
 
     .itemNote {
         font-size: 0.75rem;
+    }
+}
+
+.catHub {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.catCard {
+    position: relative;
+    border-radius: 32px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+}
+
+.catCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 138, 75, 0.2);
+}
+
+.catOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top, rgba(0, 138, 75, 0.7) 0%, rgba(255, 255, 255, 0.1) 60%, transparent 100%);
+}
+
+.catImage {
+    position: absolute !important;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.catCard:hover .catImage {
+    transform: scale(1.1);
+}
+
+.catInfo {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    color: white;
+}
+
+.catTitle {
+    font-family: var(--font-playfair);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.catAction {
+    font-family: var(--font-inter);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-lime);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .catHub {
+        grid-template-columns: 1fr;
+    }
+    
+    .catCard {
+        aspect-ratio: 16/9;
     }
 }

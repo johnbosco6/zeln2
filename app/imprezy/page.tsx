@@ -1,6 +1,5 @@
 import Navbar from "../components/Navbar";
-import SecondaryNav from "../components/SecondaryNav";
-import Footer from "../components/Footer";
+
 import type { Metadata } from "next";
 import Image from "next/image";
 import styles from "../page.module.css";
@@ -23,7 +22,7 @@ export default function Imprezy() {
                 </div>
 
                 <Navbar />
-                <SecondaryNav />
+
 
                 {/* Hero Section */}
                 <section className={styles.hero}>
@@ -31,6 +30,7 @@ export default function Imprezy() {
                     <p className={styles.heroSubtitle}>
                         Twoja wyjątkowa uroczystość w Lublinie
                     </p>
+                    <div className={styles.heroBadge}>Imprezy & Eventy</div>
                 </section>
 
                 {/* Content Sections */}
@@ -45,24 +45,34 @@ export default function Imprezy() {
                                 Planujesz urodziny, chrzciny lub inną okazję, którą chcesz uczcić z rodziną i przyjaciółmi? Chętnie ugościmy Was w naszej restauracji.
                             </p>
                         </div>
-                        <Image
-                            src="/interior.jpg"
-                            alt="Wnętrze restauracji"
-                            width={600}
-                            height={400}
-                            className={styles.cardImage}
-                        />
+                        <div className={styles.relative}>
+                            <Image
+                                src="/images/interior/B05A1133.webp"
+                                alt="Wnętrze restauracji"
+                                width={600}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>
+                                Rodzinna Atmosfera
+                            </div>
+                        </div>
                     </div>
 
                     {/* Section 2 */}
                     <div className={`${styles.card} ${styles.cardReverse}`}>
-                        <Image
-                            src="/food2.jpg"
-                            alt="Dania na imprezę"
-                            width={600}
-                            height={400}
-                            className={styles.cardImage}
-                        />
+                        <div className={styles.relative}>
+                            <Image
+                                src="/images/catering/DSC_3447bm.webp"
+                                alt="Dania na imprezę"
+                                width={600}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>
+                                Idealny Lokal
+                            </div>
+                        </div>
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>Twoja Impreza Okolicznościowa w Lublinie</h2>
                             <p className={styles.cardText}>
@@ -83,25 +93,62 @@ export default function Imprezy() {
                                 Restauracja Zielony Talerzyk to idealne miejsce do organizacji wszelkiego rodzaju imprez okolicznościowych.
                             </p>
                         </div>
-                        <Image
-                            src="/food3.jpg"
-                            alt="Eleganckie dania"
-                            width={600}
-                            height={400}
-                            className={styles.cardImage}
-                        />
+                        <div className={styles.relative}>
+                            <Image
+                                src="/images/catering/DSC_3511bm.webp"
+                                alt="Eleganckie dania"
+                                width={600}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>
+                                Niezapomniane Wrażenia
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Raw Photo Strip */}
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(4, 1fr)',
+                        gap: '0.75rem',
+                        marginBottom: '2.5rem',
+                        borderRadius: '20px',
+                        overflow: 'hidden',
+                    }}>
+                        {[
+                            { src: '/images/raw/DSC_8924_surowe.webp', label: 'Atmosfera' },
+                            { src: '/images/raw/DSC_8925_surowe.webp', label: 'Wnętrze' },
+                            { src: '/images/raw/DSC_8953_surowe.webp', label: 'Dania' },
+                            { src: '/images/raw/DSC_8977_surowe.webp', label: 'Smaki' },
+                        ].map((item) => (
+                            <div key={item.src} className={styles.relative} style={{ height: '200px' }}>
+                                <Image
+                                    src={item.src}
+                                    alt={item.label}
+                                    fill
+                                    sizes="25vw"
+                                    style={{ objectFit: 'cover' }}
+                                />
+                                <div className={styles.imageOverlayGlass}>{item.label}</div>
+                            </div>
+                        ))}
                     </div>
 
                     {/* Full Width Section */}
                     <div className={`${styles.card} ${styles.fullWidthCard}`}>
-                        <Image
-                            src="/catering2.jpg"
-                            alt="Catering na imprezy"
-                            width={800}
-                            height={400}
-                            className={styles.cardImage}
-                            style={{ maxWidth: '600px', margin: '0 auto 2rem' }}
-                        />
+                        <div className={styles.relative} style={{ maxWidth: '600px', margin: '0 auto 2rem' }}>
+                            <Image
+                                src="/images/catering/DSC_3463bm.webp"
+                                alt="Catering na imprezy"
+                                width={800}
+                                height={400}
+                                className={styles.cardImage}
+                            />
+                            <div className={styles.imageOverlayGlass}>
+                                Catering u Klienta
+                            </div>
+                        </div>
                         <div className={styles.cardContent}>
                             <h2 className={styles.cardTitle}>Catering na Twoje Wydarzenie</h2>
                             <p className={styles.cardText}>
@@ -114,7 +161,6 @@ export default function Imprezy() {
                 </div>
             </main>
 
-            <Footer />
         </>
     );
 }

@@ -257,3 +257,119 @@
         line-height: 1.6;
     }
 }
+
+/* ── Photo Gallery ── */
+
+.gallerySection {
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.galleryHeading {
+    font-family: var(--font-playfair);
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.gallerySubtitle {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    text-align: center;
+    opacity: 0.75;
+    margin-bottom: 3rem;
+}
+
+.galleryGrid {
+    columns: 3;
+    column-gap: 1.25rem;
+}
+
+.galleryItem {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 138, 75, 0.1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s ease;
+    cursor: pointer;
+    background: #f0f9f4;
+}
+
+.galleryItem:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 16px 48px rgba(0, 138, 75, 0.22);
+}
+
+.galleryItem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.galleryItem:hover img {
+    transform: scale(1.06);
+}
+
+.galleryItemOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 138, 75, 0.65) 0%,
+        rgba(255, 255, 255, 0.06) 55%,
+        transparent 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.galleryItem:hover .galleryItemOverlay {
+    opacity: 1;
+}
+
+.galleryItemLabel {
+    font-family: var(--font-inter);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 999px;
+    padding: 0.4rem 1.1rem;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 1024px) {
+    .galleryGrid {
+        columns: 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .galleryGrid {
+        columns: 1;
+    }
+
+    .gallerySection {
+        padding: 0 1rem;
+    }
+
+    .galleryHeading {
+        font-size: 2rem;
+    }
+}

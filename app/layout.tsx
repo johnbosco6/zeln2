@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google"; // Changed fonts
 import { Analytics } from "@vercel/analytics/next";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -53,9 +55,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl"> {/* Changed lang to Polish */}
+    <html lang="pl">
       <body className={`${playfair.variable} ${inter.variable}`}>
+        <Navbar />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>
