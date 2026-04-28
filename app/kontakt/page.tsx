@@ -59,11 +59,11 @@ export default function Kontakt() {
                                 <MapPin size={32} />
                             </div>
                             <h3 className={styles.cardTitle}>Adres</h3>
-                            <p className={styles.cardText}>ul. Krakowskie Przedmieście 3</p>
-                            <p className={styles.cardText}>20-002 Lublin, Poland</p>
-                            <p className={styles.cardSubtext}>Centrum Lublina</p>
+                            <p className={styles.cardText}>ul. Królewska 3</p>
+                            <p className={styles.cardText}>20-109 Lublin, Poland</p>
+                            <p className={styles.cardSubtext}>Stare Miasto - w sercu Lublina</p>
                             <a
-                                href="https://maps.google.com/?q=ul.+Krakowskie+Przedmieście+3,+Lublin"
+                                href="https://maps.google.com/?q=ul.+Królewska+3,+Lublin"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.cardLink}
@@ -78,8 +78,8 @@ export default function Kontakt() {
                                 <Phone size={32} />
                             </div>
                             <h3 className={styles.cardTitle}>Telefon</h3>
-                            <a href="tel:+48574933988" className={styles.phoneNumber}>
-                                574 933 988
+                            <a href="tel:+48500068241" className={styles.phoneNumber}>
+                                500 068 241
                             </a>
                             <p className={styles.cardSubtext}>Zadzwoń, aby zarezerwować stolik lub złożyć zamówienie</p>
                         </div>
@@ -90,8 +90,8 @@ export default function Kontakt() {
                                 <Mail size={32} />
                             </div>
                             <h3 className={styles.cardTitle}>Email</h3>
-                            <a href="mailto:basmalublin@gmail.com" className={styles.emailLink}>
-                                basmalublin@gmail.com
+                            <a href="mailto:zielonatalerzyk@protonmail.com" className={styles.emailLink}>
+                                zielonatalerzyk@protonmail.com
                             </a>
                             <p className={styles.cardSubtext}>Napisz do nas w sprawie cateringu lub rezerwacji</p>
                         </div>

@@ -35,10 +35,10 @@ export default function TermsAndConditions() {
                     <p>
                         Właścicielem serwisu jest:<br />
                         <strong>Jakub Wiśniewski Browar Dziki Wschód</strong><br />
-                        ul. Krakowskie Przedmieście 3, 20-002 Lublin<br />
+                        ul. Królewska 3, 20-109 Lublin<br />
                         NIP: 714 185 55 52<br />
-                        Tel: +48 574 933 988<br />
-                        Email: basmalublin@gmail.com
+                        Tel: +48 500 068 241<br />
+                        Email: zielonatalerzyk@protonmail.com
                     </p>
                 </section>
 

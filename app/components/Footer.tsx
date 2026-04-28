@@ -105,17 +105,17 @@ export default function Footer() {
                 <div className={styles.footerSection}>
                     <h3>Kontakt</h3>
                     <div className={styles.contactInfo}>
-                        <a href="tel:+48574933988" className={styles.contactLink}>
+                        <a href="tel:+48500068241" className={styles.contactLink}>
                             <Phone size={18} />
-                            <span>574 933 988</span>
+                            <span>500 068 241</span>
                         </a>
-                        <a href="mailto:basmalublin@gmail.com" className={styles.contactLink}>
+                        <a href="mailto:zielonatalerzyk@protonmail.com" className={styles.contactLink}>
                             <Mail size={18} />
-                            <span>basmalublin@gmail.com</span>
+                            <span>zielonatalerzyk@protonmail.com</span>
                         </a>
                         <div className={styles.contactLink}>
                             <MapPin size={18} />
-                            <span>ul. Krakowskie Przedmieście 3<br />20-002 Lublin</span>
+                            <span>ul. Królewska 3<br />20-109 Lublin</span>
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@ export default function Footer() {
             <div className={styles.footerLegal}>
                 <div className={styles.companyInfo}>
                     <h4>Dane firmowe:</h4>
-                    <p>Jakub Wiśniewski Browar Dziki Wschód | ul. Krakowskie Przedmieście 3, 20-002 Lublin | NIP: 714 185 55 52</p>
+                    <p>Jakub Wiśniewski Browar Dziki Wschód | ul. Królewska 3, 20-109 Lublin | NIP: 714 185 55 52 | Tel: +48 500 068 241</p>
                 </div>
                 <div className={styles.legalLinks}>
                     <Link href="/polityka-prywatnosci">Polityka Prywatności</Link>

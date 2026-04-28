@@ -20,8 +20,9 @@ export default function PrivacyPolicy() {
                     <p>
                         Administratorem danych osobowych zawartych w serwisie jest:<br />
                         <strong>Jakub Wiśniewski Browar Dziki Wschód</strong><br />
-                        ul. Krakowskie Przedmieście 3, 20-002 Lublin<br />
-                        NIP: 714 185 55 52
+                        ul. Królewska 3, 20-109 Lublin<br />
+                        NIP: 714 185 55 52<br />
+                        Tel: +48 500 068 241
                     </p>
                 </section>
 
