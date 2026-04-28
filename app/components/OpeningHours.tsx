@@ -12,29 +12,24 @@ export default function OpeningHours() {
         const day = now.getDay();
         const hour = now.getHours();
 
-        // Sunday: 12:00 - 20:00
-        if (day === 0) return hour >= 12 && hour < 20;
-        // Monday-Thursday: 11:00 - 20:00
-        if (day >= 1 && day <= 4) return hour >= 11 && hour < 20;
-        // Friday: 11:00 - 21:00
-        if (day === 5) return hour >= 11 && hour < 21;
-        // Saturday: 12:00 - 21:00
-        if (day === 6) return hour >= 12 && hour < 21;
-
-        return false;
+        // Friday & Saturday: 12:00 - 23:00
+        if (day === 5 || day === 6) return hour >= 12 && hour < 23;
+        
+        // Other days: 12:00 - 22:00
+        return hour >= 12 && hour < 22;
     };
 
     const currentDay = getCurrentDay();
     const openNow = isOpen();
 
     const schedule = [
-        { day: 'Sunday', hours: '12:00 PM - 8:00 PM' },
-        { day: 'Monday', hours: '11:00 AM - 8:00 PM' },
-        { day: 'Tuesday', hours: '11:00 AM - 8:00 PM' },
-        { day: 'Wednesday', hours: '11:00 AM - 8:00 PM' },
-        { day: 'Thursday', hours: '11:00 AM - 8:00 PM' },
-        { day: 'Friday', hours: '11:00 AM - 9:00 PM' },
-        { day: 'Saturday', hours: '12:00 PM - 9:00 PM' },
+        { day: 'Sunday', hours: '12:00 PM - 10:00 PM' },
+        { day: 'Monday', hours: '12:00 PM - 10:00 PM' },
+        { day: 'Tuesday', hours: '12:00 PM - 10:00 PM' },
+        { day: 'Wednesday', hours: '12:00 PM - 10:00 PM' },
+        { day: 'Thursday', hours: '12:00 PM - 10:00 PM' },
+        { day: 'Friday', hours: '12:00 PM - 11:00 PM' },
+        { day: 'Saturday', hours: '12:00 PM - 11:00 PM' },
     ];
 
     return (

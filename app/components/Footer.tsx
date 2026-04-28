@@ -120,31 +120,31 @@ export default function Footer() {
                     <div className={styles.hoursGrid}>
                         <div className={styles.hourRow}>
                             <span className={styles.dayLabel}>Niedziela:</span>
-                            <span className={styles.hourTime}>12:00 - 20:00</span>
+                            <span className={styles.hourTime}>12:00 - 22:00</span>
                         </div>
                         <div className={styles.hourRow}>
                             <span className={styles.dayLabel}>Poniedziałek:</span>
-                            <span className={styles.hourTime}>11:00 - 20:00</span>
+                            <span className={styles.hourTime}>12:00 - 22:00</span>
                         </div>
                         <div className={styles.hourRow}>
                             <span className={styles.dayLabel}>Wtorek:</span>
-                            <span className={styles.hourTime}>11:00 - 20:00</span>
+                            <span className={styles.hourTime}>12:00 - 22:00</span>
                         </div>
                         <div className={styles.hourRow}>
                             <span className={styles.dayLabel}>Środa:</span>
-                            <span className={styles.hourTime}>11:00 - 20:00</span>
+                            <span className={styles.hourTime}>12:00 - 22:00</span>
                         </div>
                         <div className={styles.hourRow}>
                             <span className={styles.dayLabel}>Czwartek:</span>
-                            <span className={styles.hourTime}>11:00 - 20:00</span>
+                            <span className={styles.hourTime}>12:00 - 22:00</span>
                         </div>
                         <div className={styles.hourRow}>
                             <span className={styles.dayLabel}>Piątek:</span>
-                            <span className={styles.hourTime}>11:00 - 21:00</span>
+                            <span className={styles.hourTime}>12:00 - 23:00</span>
                         </div>
                         <div className={styles.hourRow}>
                             <span className={styles.dayLabel}>Sobota:</span>
-                            <span className={styles.hourTime}>12:00 - 21:00</span>
+                            <span className={styles.hourTime}>12:00 - 23:00</span>
                         </div>
                     </div>
                 </div>
