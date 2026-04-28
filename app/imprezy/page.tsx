@@ -105,26 +105,19 @@ export default function Imprezy() {
                     </div>
 
                     {/* Raw Photo Strip */}
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(4, 1fr)',
-                        gap: '0.75rem',
-                        marginBottom: '2.5rem',
-                        borderRadius: '20px',
-                        overflow: 'hidden',
-                    }}>
+                    <div className={`${styles.photoStrip} ${styles.strip4}`}>
                         {[
                             { src: '/images/raw/DSC_8924_surowe.webp', label: 'Atmosfera' },
                             { src: '/images/raw/DSC_8925_surowe.webp', label: 'Wnętrze' },
                             { src: '/images/raw/DSC_8953_surowe.webp', label: 'Dania' },
                             { src: '/images/raw/DSC_8977_surowe.webp', label: 'Smaki' },
                         ].map((item) => (
-                            <div key={item.src} className={styles.relative} style={{ height: '200px' }}>
+                            <div key={item.src} className={styles.photoStripItem}>
                                 <Image
                                     src={item.src}
                                     alt={item.label}
                                     fill
-                                    sizes="25vw"
+                                    sizes="(max-width: 768px) 75vw, 25vw"
                                     style={{ objectFit: 'cover' }}
                                 />
                                 <div className={styles.imageOverlayGlass}>{item.label}</div>

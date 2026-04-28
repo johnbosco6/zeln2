@@ -1,13 +1,13 @@
 
 import styles from "../page.module.css";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "Dostawa i Kontakt",
     description: "Zamów zdrowe jedzenie prosto pod Twoje drzwi. Szybka dostawa w Lublinie i łatwy kontakt z naszą restauracją.",
     keywords: ["jedzenie na telefon Lublin", "dostawa jedzenia Lublin", "zdrowe jedzenie na wynos", "kontakt Zielony Talerzyk"],
 };
-import Image from "next/image";
 
 export default function Dostawa() {
     return (
@@ -132,25 +132,18 @@ export default function Dostawa() {
                         </div>
                     </div>
                     {/* Raw Photo Strip */}
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(3, 1fr)',
-                        gap: '0.75rem',
-                        marginTop: '1rem',
-                        borderRadius: '20px',
-                        overflow: 'hidden',
-                    }}>
+                    <div className={`${styles.photoStrip} ${styles.strip3}`}>
                         {[
                             { src: '/images/raw/DSC_8934_surowe.webp', label: 'Świeżość' },
                             { src: '/images/raw/DSC_8940_surowe.webp', label: 'Jakość' },
                             { src: '/images/raw/DSC_8942_surowe.webp', label: 'Smak' },
                         ].map((item) => (
-                            <div key={item.src} className={styles.relative} style={{ height: '200px' }}>
+                            <div key={item.src} className={styles.photoStripItem}>
                                 <Image
                                     src={item.src}
                                     alt={item.label}
                                     fill
-                                    sizes="33vw"
+                                    sizes="(max-width: 768px) 75vw, 33vw"
                                     style={{ objectFit: 'cover' }}
                                 />
                                 <div className={styles.imageOverlayGlass}>{item.label}</div>

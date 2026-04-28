@@ -1,7 +1,7 @@
 
 import OpeningHours from "../components/OpeningHours";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Instagram, Facebook, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
 import styles from "./kontakt.module.css";
 import pageStyles from "../page.module.css";
 
@@ -28,29 +28,20 @@ export default function Kontakt() {
                 </section>
 
                 {/* Photo Strip */}
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(5, 1fr)',
-                    gap: '0.6rem',
-                    maxWidth: '1200px',
-                    margin: '0 auto 2rem',
-                    padding: '0 2rem',
-                    borderRadius: '20px',
-                    overflow: 'hidden',
-                }}>
+                <div className={`${pageStyles.photoStrip} ${pageStyles.strip5}`}>
                     {[
                         { src: '/images/raw/DSC_8954_surowe.webp', label: 'Kuchnia' },
                         { src: '/images/raw/DSC_8955_surowe.webp', label: 'Dania' },
                         { src: '/images/raw/DSC_8959_surowe.webp', label: 'Smaki' },
                         { src: '/images/raw/DSC_8998_surowe.webp', label: 'Jakość' },
-                        { src: '/images/raw/DSC_9004_surowe.webp', label: 'Wieżno' },
+                        { src: '/images/raw/DSC_9004_surowe.webp', label: 'Świeżo' },
                     ].map((item) => (
-                        <div key={item.src} className={pageStyles.relative} style={{ height: '180px' }}>
+                        <div key={item.src} className={pageStyles.photoStripItem}>
                             <Image
                                 src={item.src}
                                 alt={item.label}
                                 fill
-                                sizes="20vw"
+                                sizes="(max-width: 768px) 75vw, 20vw"
                                 style={{ objectFit: 'cover' }}
                             />
                             <div className={pageStyles.imageOverlayGlass}>{item.label}</div>

@@ -92,16 +92,7 @@ export default function Home() {
         </section>
 
         {/* Raw Photo Strip — food showcase */}
-        <section style={{
-          maxWidth: '1300px',
-          margin: '0 auto',
-          padding: '0 2rem 2rem',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(6, 1fr)',
-          gap: '0.6rem',
-          borderRadius: '20px',
-          overflow: 'hidden',
-        }}>
+        <section className={styles.photoStrip}>
           {[
             { src: '/images/raw/DSC_8979_surowe.webp', label: 'Smak' },
             { src: '/images/raw/DSC_9005_surowe.webp', label: 'Kuchnia' },
@@ -110,12 +101,12 @@ export default function Home() {
             { src: '/images/raw/DSC_8977_surowe.webp', label: 'Pyszne' },
             { src: '/images/raw/DSC_8925_surowe.webp', label: 'Zdrowe' },
           ].map((item) => (
-            <div key={item.src} className={styles.relative} style={{ height: '160px' }}>
+            <div key={item.src} className={styles.photoStripItem}>
               <Image
                 src={item.src}
                 alt={item.label}
                 fill
-                sizes="17vw"
+                sizes="(max-width: 768px) 75vw, 17vw"
                 style={{ objectFit: 'cover' }}
               />
               <div className={styles.imageOverlayGlass}>{item.label}</div>
