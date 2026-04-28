@@ -1,3 +1,4 @@
+import Navbar from "../../components/Navbar";
 
 import MenuDisplay from "../../components/MenuDisplay";
 import { menuData } from "../../data/menuData";
