@@ -1,4 +1,3 @@
-import Navbar from "../../components/Navbar";
 
 import MenuDisplay from "../../components/MenuDisplay";
 import { menuData } from "../../data/menuData";
@@ -14,8 +13,6 @@ export default function Pierogi() {
                     <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-[rgba(196,214,0,0.15)] via-transparent to-transparent" />
                     <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[rgba(0,138,75,0.12)] via-transparent to-transparent" />
                 </div>
-
-                <Navbar />
 
 
                 {data ? <MenuDisplay data={data} /> : <div style={{ padding: '10rem', textAlign: 'center' }}>Menu loading...</div>}
