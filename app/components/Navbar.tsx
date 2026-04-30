@@ -6,13 +6,14 @@ import React from "react";
 import { Utensils, Menu, X } from "lucide-react";
 
 const navLinks = [
-    { href: "/", label: "Dom" },
+    { href: "/", label: "O nas" },
     { href: "/lunch-menu", label: "Lunch" },
     { href: "/menu", label: "Menu" },
     { href: "/catering", label: "Catering" },
     { href: "/imprezy", label: "Imprezy" },
     { href: "/dostawa", label: "Dostawa" },
     { href: "/kontakt", label: "Kontakt" },
+    { href: "/zamow", label: "Zamów Online" },
 ];
 
 export default function Navbar() {

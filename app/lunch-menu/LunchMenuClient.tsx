@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Phone, ExternalLink, Calendar, Soup, UtensilsCrossed } from "lucide-react";
+import { Calendar, Soup, UtensilsCrossed } from "lucide-react";
 import styles from "./lunch-menu.module.css";
 
 const lunchMenus = [
@@ -159,15 +159,7 @@ export default function LunchMenuClient() {
                                 <span className={styles.price}>{menu.price}</span>
                             </div>
 
-                            <div className={styles.contactBox}>
-                                <a href="tel:+48500068241" className={styles.phoneLink}>
-                                    <Phone size={20} />
-                                    <span>500 068 241</span>
-                                </a>
-                                <a href="#" className={styles.orderBtn}>
-                                    Zamów online <ExternalLink size={16} style={{ marginLeft: '8px' }} />
-                                </a>
-                            </div>
+
                         </div>
                     );
                 })}

@@ -50,6 +50,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { OrderProvider } from "./context/OrderContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,11 +60,13 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body className={`${playfair.variable} ${inter.variable}`}>
-        <Navbar />
-        {children}
-        <Footer />
-        <CookieBanner />
-        <Analytics />
+        <OrderProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <CookieBanner />
+          <Analytics />
+        </OrderProvider>
       </body>
     </html>
   );

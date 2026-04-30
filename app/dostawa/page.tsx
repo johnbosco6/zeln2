@@ -131,25 +131,7 @@ export default function Dostawa() {
                             </p>
                         </div>
                     </div>
-                    {/* Raw Photo Strip */}
-                    <div className={`${styles.photoStrip} ${styles.strip3}`}>
-                        {[
-                            { src: '/images/raw/DSC_8934_surowe.webp', label: 'Świeżość' },
-                            { src: '/images/raw/DSC_8940_surowe.webp', label: 'Jakość' },
-                            { src: '/images/raw/DSC_8942_surowe.webp', label: 'Smak' },
-                        ].map((item) => (
-                            <div key={item.src} className={styles.photoStripItem}>
-                                <Image
-                                    src={item.src}
-                                    alt={item.label}
-                                    fill
-                                    sizes="(max-width: 768px) 75vw, 33vw"
-                                    style={{ objectFit: 'cover' }}
-                                />
-                                <div className={styles.imageOverlayGlass}>{item.label}</div>
-                            </div>
-                        ))}
-                    </div>
+
                 </div>
             </main>
 

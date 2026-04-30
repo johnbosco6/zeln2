@@ -27,27 +27,7 @@ export default function Kontakt() {
                     <div className={styles.heroBadge}>Zielony Talerzyk &bull; Lublin</div>
                 </section>
 
-                {/* Photo Strip */}
-                <div className={`${pageStyles.photoStrip} ${pageStyles.strip5}`}>
-                    {[
-                        { src: '/images/raw/DSC_8954_surowe.webp', label: 'Kuchnia' },
-                        { src: '/images/raw/DSC_8955_surowe.webp', label: 'Dania' },
-                        { src: '/images/raw/DSC_8959_surowe.webp', label: 'Smaki' },
-                        { src: '/images/raw/DSC_8998_surowe.webp', label: 'Jakość' },
-                        { src: '/images/raw/DSC_9004_surowe.webp', label: 'Świeżo' },
-                    ].map((item) => (
-                        <div key={item.src} className={pageStyles.photoStripItem}>
-                            <Image
-                                src={item.src}
-                                alt={item.label}
-                                fill
-                                sizes="(max-width: 768px) 75vw, 20vw"
-                                style={{ objectFit: 'cover' }}
-                            />
-                            <div className={pageStyles.imageOverlayGlass}>{item.label}</div>
-                        </div>
-                    ))}
-                </div>
+
 
                 {/* Contact Content */}
                 <div className={styles.contactContainer}>

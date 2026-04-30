@@ -6,158 +6,154 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen relative overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 -z-10 bg-[#ffffff]">
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#f0fdf4] via-transparent to-[#fdfcf2] opacity-80" />
-          <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle_at_center,_rgba(196,214,0,0.18)_0%,_transparent_70%)] animate-pulse" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[radial-gradient(circle_at_center,_rgba(0,138,75,0.12)_0%,_transparent_70%)]" />
-        </div>
-
-        {/* Hero Section */}
-        <section className={styles.hero}>
-          <h1 className={styles.heroTitle}>Zielony Talerzyk</h1>
-          <p className={styles.heroSubtitle}>
-            Pyszne i zdrowe jedzenie!
-          </p>
-          <div className={styles.heroBadge}>Restauracja w Lublinie</div>
-          <div className={styles.heroAction}>
-            <Link href="/lunch-menu" className={styles.animatedButton}>
-              <span>Lunch Menu</span>
-            </Link>
+      <main className="min-h-screen relative bg-white text-black">
+        {/* Hero Section - Full Screen Image */}
+        <section className={styles.modernHero}>
+          <Image 
+            src="/images/interior/hero image.webp" 
+            alt="Zielony Talerzyk Wnętrze" 
+            fill
+            priority
+            className={styles.heroMainImage}
+          />
+          <div className={styles.scrollIndicator}>
+            <span>Odkryj więcej</span>
+            <div className={styles.scrollLine}></div>
           </div>
         </section>
 
-        {/* Photo Gallery Grid */}
-        <section className={styles.homeGallery}>
-          <div className={styles.homeGalleryGrid}>
-
-            {/* Image 1 — tall left */}
-            <div className={`${styles.homeGalleryItem} ${styles.galleryTall}`}>
-              <Image
-                src="/images/interior/B05A0793-2.webp"
-                alt="Wnętrze restauracji"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className={styles.homeGalleryImg}
-              />
-              <div className={styles.homeGalleryOverlay}>
-                <span className={styles.homeGalleryLabel}>Nasze Wnętrze</span>
-              </div>
+        {/* Introduction Section - Modern Horizontal Layout */}
+        <section className={styles.introSectionModern}>
+          <div className={styles.introCardHorizontal}>
+            <div className={styles.introTextContent}>
+              <span className={styles.brandTagSmall}>Zielony Talerzyk</span>
+              <h1 className={styles.introTitleSmall}>Pyszne i zdrowe jedzenie w sercu Lublina</h1>
+              <p className={styles.introSubtitleSmall}>
+                Poczuj prawdziwy smak połączenia dwóch idei - Comfort Food i Slow Food. Tworzymy tradycyjne dania z nowoczesnym twistem ze świeżych, starannie wyselekcjonowanych i lokalnych składników, by dawać Ci niepowtarzalne doświadczenie kulinarne
+              </p>
             </div>
-
-            {/* Middle column — 2 stacked images */}
-            <div className={styles.homeGalleryMiddle}>
-              <div className={styles.homeGalleryItem}>
-                <Image
-                  src="/images/interior/B05A0957-2.webp"
-                  alt="Sala restauracyjna"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className={styles.homeGalleryImg}
-                />
-                <div className={styles.homeGalleryOverlay}>
-                  <span className={styles.homeGalleryLabel}>Wyjątkowe Miejsce</span>
-                </div>
-              </div>
-              <div className={styles.homeGalleryItem}>
-                <Image
-                  src="/images/interior/B05A1133.webp"
-                  alt="Klimat restauracji"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className={styles.homeGalleryImg}
-                />
-                <div className={styles.homeGalleryOverlay}>
-                  <span className={styles.homeGalleryLabel}>Przyjazna Atmosfera</span>
-                </div>
-              </div>
+            <div className={styles.introActionsHorizontal}>
+              <Link href="/zamow" className={styles.primaryActionSmall}>Zamów Online</Link>
+              <Link href="/menu" className={styles.secondaryActionSmall}>Sprawdź Menu</Link>
+              <Link href="/lunch-menu" className={styles.secondaryActionSmall}>Lunch Menu</Link>
             </div>
-
-            {/* Image 3 — tall right */}
-            <div className={`${styles.homeGalleryItem} ${styles.galleryTall}`}>
-              <Image
-                src="/images/catering/DSC_3461bm.webp"
-                alt="Nasze dania"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className={styles.homeGalleryImg}
-              />
-              <div className={styles.homeGalleryOverlay}>
-                <span className={styles.homeGalleryLabel}>Slow Food</span>
-              </div>
-            </div>
-
           </div>
         </section>
 
-        {/* Raw Photo Strip — food showcase */}
-        <section className={styles.photoStrip}>
+        {/* Services - Modern Grid Layout */}
+        <section className={styles.servicesModernSection}>
+          <div className={styles.containerSmall}>
+            <div className={styles.sectionHeaderCompact}>
+              <span className={styles.subTagCenter}>Nasz Warsztat</span>
+              <h2 className={styles.modernTitleSmall}>Co możemy dla Ciebie zrobić?</h2>
+            </div>
+            <div className={styles.servicesGridModernFixed}>
+              <div className={styles.serviceCardClean}>
+                <span className={styles.serviceIconLarge}>🌱</span>
+                <h3>Świeże Menu i Slow Food</h3>
+                <p>Nasze dania główne, sałatki, pierogi, zupy i desery przygotowujemy od podstaw, stawiając na autentyczny smak i sezonowe produkty.</p>
+              </div>
+              <div className={styles.serviceCardClean}>
+                <span className={styles.serviceIconLarge}>☀️</span>
+                <h3>Codzienny Lunch</h3>
+                <p>Szukasz pożywnej przerwy w pracy? Zobacz nasze zróżnicowane menu lunchowe, które każdego dnia zaskoczy Cię czymś nowym.</p>
+              </div>
+              <div className={styles.serviceCardClean}>
+                <span className={styles.serviceIconLarge}>🤝</span>
+                <h3>Catering i Imprezy</h3>
+                <p>Urodziny, spotkanie firmowe czy event okolicznościowy? Przygotujemy wyjątkowy catering i pomożemy w organizacji Twojego wydarzenia, aby zachwycić Twoich gości.</p>
+              </div>
+              <div className={styles.serviceCardClean}>
+                <span className={styles.serviceIconLarge}>🚴</span>
+                <h3>Szybka Dostawa</h3>
+                <p>Złapał Cię głód w domu lub w biurze? Zamów nasze zdrowe przysmaki z dostawą prosto pod Twoje drzwi.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Slogan 1 - Split Layout (Text Left, Image Right) */}
+        <section className={styles.splitSectionAlt}>
+          <div className={styles.splitGrid}>
+            <div className={styles.splitContent}>
+              <span className={styles.subTag}>Nasza Filozofia</span>
+              <h2 className={styles.splitTitle}>Z natury na talerz.</h2>
+              <p className={styles.splitDescription}>Wierzymy w prostotę i jakość. Każdy składnik w naszej kuchni ma swoją historię, a każda potrawa jest hołdem dla lokalnych dostawców i natury.</p>
+            </div>
+            <div className={styles.splitImageContainer}>
+              <Image src="/images/raw/DSC_8924_surowe.webp" alt="Z natury na talerz" fill className={styles.imgCover} />
+            </div>
+          </div>
+        </section>
+
+        {/* Bakery - Split Layout (Image Left, Text Right) */}
+        <section className={styles.splitSection}>
+          <div className={styles.splitGrid}>
+            <div className={styles.splitImageContainer}>
+              <Image src="/images/catering/DSC_3440bm.webp" alt="Piekarnia" fill className={styles.imgCover} />
+            </div>
+            <div className={styles.splitContent}>
+              <span className={styles.subTag}>Świeżo wypiekane</span>
+              <h2 className={styles.splitTitle}>Piekarnia</h2>
+              <p className={styles.splitDescription}>Codziennie wypiekamy dla Ciebie niepowtarzalne chleby orkiszowe, vermonty, chleby żytnie, bajgle, precle i wiele innych. Poczuj zapach prawdziwego chleba.</p>
+              <Link href="/menu/nasze-wyroby" className={styles.textLink}>Sprawdź ofertę piekarni →</Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Slogan 2 & Delivery - Split Layout (Text Left, Image Right) */}
+        <section className={styles.splitSectionAlt}>
+          <div className={styles.splitGrid}>
+            <div className={styles.splitContent}>
+              <span className={styles.subTag}>Gdziekolwiek jesteś</span>
+              <h2 className={styles.splitTitle}>Zawsze świeżo, zawsze smacznie.</h2>
+              <div className={styles.serviceItemMini}>
+                <h3>🤝 Catering i Imprezy</h3>
+                <p>Urodziny, spotkanie firmowe czy event okolicznościowy? Przygotujemy wyjątkowy catering i pomożemy w organizacji Twojego wydarzenia.</p>
+              </div>
+              <div className={styles.serviceItemMini}>
+                <h3>🚴 Szybka Dostawa</h3>
+                <p>Złapał Cię głód w domu lub w biurze? Zamów nasze zdrowe przysmaki z dostawą prosto pod Twoje drzwi.</p>
+              </div>
+            </div>
+            <div className={styles.splitImageContainer}>
+              <Image src="/images/raw/DSC_8977_surowe.webp" alt="Dostawa" fill className={styles.imgCover} />
+            </div>
+          </div>
+        </section>
+
+        {/* Weekly Offer - Split Layout (Image Left, Text Right) */}
+        <section className={styles.splitSection}>
+          <div className={styles.splitGrid}>
+            <div className={styles.splitImageContainer}>
+              <Image src="/images/lunches.jpg" alt="Oferta Lunchowa" fill className={styles.imgCover} />
+            </div>
+            <div className={styles.splitContent}>
+              <span className={styles.subTag}>Oferta Tygodnia</span>
+              <h2 className={styles.splitTitle}>Zielony Talerzyk – Odpocznij, zjedz dobrze i poczuj się świetnie!</h2>
+              <p className={styles.splitDescription}>Nasze menu lunchowe to idealny sposób na regenerację w ciągu dnia. Zbilansowane, zdrowe i zawsze pyszne.</p>
+              <Link href="/lunch-menu" className={styles.primaryActionSmall}>Sprawdź Lunch Menu</Link>
+            </div>
+          </div>
+        </section>
+
+
+
+        {/* Photo Strip - Elegant Gallery */}
+        <section className={styles.galleryStrip}>
           {[
-            { src: '/images/raw/DSC_8979_surowe.webp', label: 'Smak' },
-            { src: '/images/raw/DSC_9005_surowe.webp', label: 'Kuchnia' },
-            { src: '/images/raw/DSC_8924_surowe.webp', label: 'Świeże' },
-            { src: '/images/raw/DSC_8953_surowe.webp', label: 'Dania' },
-            { src: '/images/raw/DSC_8977_surowe.webp', label: 'Pyszne' },
-            { src: '/images/raw/DSC_8925_surowe.webp', label: 'Zdrowe' },
-          ].map((item) => (
-            <div key={item.src} className={styles.photoStripItem}>
-              <Image
-                src={item.src}
-                alt={item.label}
-                fill
-                sizes="(max-width: 768px) 75vw, 17vw"
-                style={{ objectFit: 'cover' }}
-              />
-              <div className={styles.imageOverlayGlass}>{item.label}</div>
+            '/images/raw/DSC_8979_surowe.webp',
+            '/images/raw/DSC_9005_surowe.webp',
+            '/images/raw/DSC_8924_surowe.webp',
+            '/images/raw/DSC_8953_surowe.webp',
+            '/images/raw/DSC_8977_surowe.webp',
+            '/images/raw/DSC_8925_surowe.webp',
+          ].map((src, i) => (
+            <div key={i} className={styles.galleryThumb}>
+              <Image src={src} alt="Food gallery" fill className={styles.imgZoom} />
             </div>
           ))}
         </section>
-
-        {/* Quick Action Buttons */}
-        <section className={styles.quickActions}>
-          <h2 className={styles.quickActionsTitle}>Co możemy dla Ciebie zrobić?</h2>
-          <div className={styles.quickActionsGrid}>
-
-            <Link href="/menu" className={styles.qaCard}>
-              <div className={styles.qaIcon}>🍽️</div>
-              <div className={styles.qaLabel}>Nasze Menu</div>
-              <div className={styles.qaDesc}>Przeglądaj dania i specjały</div>
-            </Link>
-
-            <Link href="/lunch-menu" className={styles.qaCard}>
-              <div className={styles.qaIcon}>☀️</div>
-              <div className={styles.qaLabel}>Lunch Menu</div>
-              <div className={styles.qaDesc}>Codzienne propozycje lunchowe</div>
-            </Link>
-
-            <Link href="/catering" className={styles.qaCard}>
-              <div className={styles.qaIcon}>🤝</div>
-              <div className={styles.qaLabel}>Catering</div>
-              <div className={styles.qaDesc}>Na każdą okazję i event</div>
-            </Link>
-
-            <Link href="/imprezy" className={styles.qaCard}>
-              <div className={styles.qaIcon}>🎉</div>
-              <div className={styles.qaLabel}>Imprezy</div>
-              <div className={styles.qaDesc}>Organizacja przyjęć i eventów</div>
-            </Link>
-
-            <Link href="/dostawa" className={styles.qaCard}>
-              <div className={styles.qaIcon}>🚴</div>
-              <div className={styles.qaLabel}>Dostawa</div>
-              <div className={styles.qaDesc}>Świeże dania prosto do Ciebie</div>
-            </Link>
-
-            <Link href="/kontakt" className={styles.qaCard}>
-              <div className={styles.qaIcon}>📍</div>
-              <div className={styles.qaLabel}>Kontakt & Lokalizacja</div>
-              <div className={styles.qaDesc}>Znajdź nas w centrum Lublina</div>
-            </Link>
-
-          </div>
-        </section>
-
       </main>
     </>
   );
