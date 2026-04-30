@@ -223,7 +223,62 @@
 }
 
 @media (max-width: 768px) {
+  .checkoutPage {
+    padding: 6rem 1rem 2rem;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
   .checkoutGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .formSection {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .sectionHeader h3 {
+    font-size: 1.15rem;
+  }
+
+  .inputGroup input, .inputGroup textarea {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .orderSummary {
+    order: -1;
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .successContainer, .emptyContainer {
+    padding: 1rem;
+    min-height: 60vh;
+  }
+
+  .successCard {
+    padding: 2rem 1.5rem;
+    border-radius: 24px;
+  }
+
+  .submitBtn {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
     grid-template-columns: 1fr;
   }
 }
