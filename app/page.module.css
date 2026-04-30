@@ -262,26 +262,49 @@
 }
 
 @media (max-width: 1024px) {
+  .modernHero {
+    height: 60vh;
+  }
+  .introSectionModern {
+    margin-top: -40px;
+  }
   .splitGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem; /* Even tighter */
   }
   .splitSectionAlt .splitGrid {
     display: flex;
     flex-direction: column-reverse;
   }
   .splitImageContainer {
-    height: 350px;
+    height: 300px;
     border-radius: 20px;
   }
   .splitTitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   .splitSection, .splitSectionAlt {
-    padding: 2.5rem 1.5rem; /* Even tighter on mobile */
+    padding: 1.5rem 1rem; /* Extremely tight for mobile */
   }
   .splitDescription {
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+  }
+  .servicesModernSection {
+    padding: 1.5rem 1rem; /* Extremely tight for mobile */
+  }
+  .galleryStrip {
+    display: flex; /* Change grid to flex for scroll */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 1rem;
+    height: 300px;
+  }
+  .galleryThumb {
+    flex: 0 0 250px; /* Fixed width for scroll items */
+    scroll-snap-align: center;
+    height: 100%;
   }
 }
 

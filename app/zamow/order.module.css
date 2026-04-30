@@ -266,19 +266,54 @@
 @media (max-width: 1024px) {
   .mainGrid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
   .sidebar {
     display: none;
   }
+  .orderContainer {
+    padding-top: 6rem;
+  }
   .cartSummary {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    left: 20px;
-    z-index: 100;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
   }
   .cartSticky {
     position: static;
-    padding: 1rem;
+    border-radius: 20px 20px 0 0;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.15);
+    border-top: 3px solid var(--primary-green);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  .cartHeader {
+    margin-bottom: 0.5rem;
+  }
+  .cartHeader h3 {
+    font-size: 1.1rem;
+  }
+  .cartList {
+    max-height: 150px;
+    margin-bottom: 1rem;
+  }
+  .cartItem {
+    padding: 0.5rem 0;
+  }
+  .totalRow {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  .checkoutBtn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  .emptyCart {
+    padding: 1rem 0;
+    font-size: 0.9rem;
   }
 }
