@@ -107,9 +107,12 @@
 
 .introActionsHorizontal {
   display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 250px;
 }
 
 .primaryActionSmall {
@@ -123,6 +126,7 @@
   letter-spacing: 0.05em;
   transition: all 0.3s ease;
   white-space: nowrap;
+  text-align: center;
 }
 
 .secondaryActionSmall {
@@ -369,6 +373,10 @@
   border-radius: 24px;
   background: #f9f9f9;
   transition: transform 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .serviceCardClean:hover {

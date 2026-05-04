@@ -34,8 +34,8 @@ export default function Home() {
             </div>
             <div className={styles.introActionsHorizontal}>
               <Link href="/zamow" className={styles.primaryActionSmall}>Zamów Online</Link>
-              <Link href="/menu" className={styles.secondaryActionSmall}>Sprawdź Menu</Link>
-              <Link href="/lunch-menu" className={styles.secondaryActionSmall}>Lunch Menu</Link>
+              <Link href="/menu" className={styles.primaryActionSmall}>Sprawdź Menu</Link>
+              <Link href="/lunch-menu" className={styles.primaryActionSmall}>Lunch Menu</Link>
             </div>
           </div>
         </section>
@@ -44,30 +44,29 @@ export default function Home() {
         <section className={styles.servicesModernSection}>
           <div className={styles.containerSmall}>
             <div className={styles.sectionHeaderCompact}>
-              <span className={styles.subTagCenter}>Nasz Warsztat</span>
               <h2 className={styles.modernTitleSmall}>Co możemy dla Ciebie zrobić?</h2>
             </div>
             <div className={styles.servicesGridModernFixed}>
-              <div className={styles.serviceCardClean}>
+              <Link href="/menu" className={styles.serviceCardClean}>
                 <span className={styles.serviceIconLarge}>🌱</span>
                 <h3>Świeże Menu i Slow Food</h3>
                 <p>Nasze dania główne, sałatki, pierogi, zupy i desery przygotowujemy od podstaw, stawiając na autentyczny smak i sezonowe produkty.</p>
-              </div>
-              <div className={styles.serviceCardClean}>
+              </Link>
+              <Link href="/lunch-menu" className={styles.serviceCardClean}>
                 <span className={styles.serviceIconLarge}>☀️</span>
                 <h3>Codzienny Lunch</h3>
                 <p>Szukasz pożywnej przerwy w pracy? Zobacz nasze zróżnicowane menu lunchowe, które każdego dnia zaskoczy Cię czymś nowym.</p>
-              </div>
-              <div className={styles.serviceCardClean}>
+              </Link>
+              <Link href="/catering" className={styles.serviceCardClean}>
                 <span className={styles.serviceIconLarge}>🤝</span>
                 <h3>Catering i Imprezy</h3>
                 <p>Urodziny, spotkanie firmowe czy event okolicznościowy? Przygotujemy wyjątkowy catering i pomożemy w organizacji Twojego wydarzenia, aby zachwycić Twoich gości.</p>
-              </div>
-              <div className={styles.serviceCardClean}>
+              </Link>
+              <Link href="/zamow" className={styles.serviceCardClean}>
                 <span className={styles.serviceIconLarge}>🚴</span>
                 <h3>Szybka Dostawa</h3>
                 <p>Złapał Cię głód w domu lub w biurze? Zamów nasze zdrowe przysmaki z dostawą prosto pod Twoje drzwi.</p>
-              </div>
+              </Link>
             </div>
           </div>
         </section>
@@ -81,7 +80,7 @@ export default function Home() {
               <p className={styles.splitDescription}>Wierzymy w prostotę i jakość. Każdy składnik w naszej kuchni ma swoją historię, a każda potrawa jest hołdem dla lokalnych dostawców i natury.</p>
             </div>
             <div className={styles.splitImageContainer}>
-              <Image src="/images/raw/DSC_8924_surowe.webp" alt="Z natury na talerz" fill className={styles.imgCover} />
+              <Image src="/images/philosophy.jpg" alt="Z natury na talerz" fill className={styles.imgCover} />
             </div>
           </div>
         </section>
