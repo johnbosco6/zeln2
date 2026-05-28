@@ -9,7 +9,7 @@ const navLinks = [
     { href: "/", label: "O nas" },
     { href: "/lunch-menu", label: "Lunch" },
     { href: "/menu", label: "Menu" },
-    { href: "/catering", label: "Catering" },
+    { href: "/catering", label: "Oferta Cateringowa" },
     { href: "/imprezy", label: "Imprezy" },
     { href: "/dostawa", label: "Dostawa" },
     { href: "/kontakt", label: "Kontakt" },

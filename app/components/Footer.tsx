@@ -87,7 +87,7 @@ export default function Footer() {
                         </Link>
                         <Link href="/catering" className={styles.menuLink}>
                             <Utensils size={18} />
-                            <span>Catering</span>
+                            <span>Oferta Cateringowa</span>
                         </Link>
                         <Link href="/faq" className={styles.menuLink}>
                             <span>FAQ (Często Zadawane Pytania) ❓</span>
