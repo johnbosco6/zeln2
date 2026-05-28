@@ -1787,18 +1787,37 @@
 }
 
 @media (max-width: 768px) {
+  .modernHero {
+    height: 85vh;
+    min-height: 620px;
+  }
+
+  .heroBottomGradient {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.55) 40%,
+      rgba(0, 0, 0, 0.8) 70%,
+      rgba(0, 0, 0, 0.95) 100%
+    );
+  }
+
   .heroBottomContent {
-    padding: 0 1rem 2rem;
+    padding: 0 1.25rem 2.5rem;
   }
 
   .heroTitleLarge {
-    font-size: clamp(2rem, 5vw, 2.5rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    margin-bottom: 0.75rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.95);
   }
 
   .heroDescriptionText {
     font-size: 0.95rem;
+    line-height: 1.6;
     margin-bottom: 1.75rem;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.95);
+    color: #ffffff;
   }
 
   .heroActionGroup {
