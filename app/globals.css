@@ -9,14 +9,6 @@
   --glass-border: rgba(255, 255, 255, 0.5);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --glass-bg: rgba(10, 10, 10, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.1);
-  }
-}
 
 html,
 body {
